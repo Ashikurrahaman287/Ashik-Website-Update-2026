@@ -1,128 +1,113 @@
-import { useState } from 'react';
+import { useRef } from 'react';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, Linkedin, Send } from 'lucide-react';
+import { Mail, Phone, Linkedin } from 'lucide-react';
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! This is a demo - in production, this would send an email.');
-  };
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="contact" className="py-24 px-6 bg-accent/20" data-testid="section-contact">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+    <section id="contact" className="py-24 px-6 bg-accent/20 relative overflow-hidden" data-testid="section-contact" ref={sectionRef}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse -top-48 -right-48" />
+        <div className="absolute w-96 h-96 bg-chart-2/5 rounded-full blur-3xl animate-pulse -bottom-48 -left-48" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
+          initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+          animate={shouldReduceMotion ? { opacity: 1, y: 0 } : (isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 })}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
+        >
           Let's Connect
-        </h2>
+        </motion.h2>
         
-        <div className="h-1 w-24 bg-gradient-to-r from-primary to-chart-2 mx-auto mb-16 rounded-full" />
+        <motion.div
+          className="h-1 w-24 bg-gradient-to-r from-primary to-chart-2 mx-auto mb-16 rounded-full"
+          initial={shouldReduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
+          animate={shouldReduceMotion ? { scaleX: 1 } : (isInView ? { scaleX: 1 } : { scaleX: 0 })}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, delay: 0.2 }}
+        />
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-card/50 backdrop-blur-sm border-card-border">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Input
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  data-testid="input-contact-name"
-                />
+        <div className="max-w-2xl mx-auto">
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={shouldReduceMotion ? { opacity: 1, y: 0 } : (isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 })}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
+          >
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border-card-border hover-elevate relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary to-chart-2 opacity-10 rounded-full blur-3xl" />
+              
+              <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10">Contact Information</h3>
+              
+              <div className="space-y-6 relative z-10">
+                <motion.a
+                  href="mailto:ashikweb3.o@gmail.com"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-accent/50 hover-elevate group reduced-motion-safe:hover-sparkle transition-all"
+                  data-testid="link-email"
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.02, x: 8 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }}
+                >
+                  <motion.div
+                    className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors flex-shrink-0"
+                    whileHover={shouldReduceMotion ? {} : { rotate: 360 }}
+                    transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
+                  >
+                    <Mail className="w-6 h-6 text-primary" />
+                  </motion.div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <p className="font-semibold text-foreground">ashikweb3.o@gmail.com</p>
+                  </div>
+                </motion.a>
+
+                <motion.a
+                  href="tel:+8801619617036"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-accent/50 hover-elevate group transition-all"
+                  data-testid="link-phone"
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.02, x: 8 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }}
+                >
+                  <motion.div
+                    className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors flex-shrink-0"
+                    whileHover={shouldReduceMotion ? {} : { rotate: -360 }}
+                    transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
+                  >
+                    <Phone className="w-6 h-6 text-primary" />
+                  </motion.div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <p className="font-semibold text-foreground">+880 1619-617036</p>
+                  </div>
+                </motion.a>
+
+                <motion.a
+                  href="https://linkedin.com/in/ashik-the-knight"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-accent/50 hover-elevate group transition-all"
+                  data-testid="link-linkedin"
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.02, x: 8 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }}
+                >
+                  <motion.div
+                    className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors flex-shrink-0"
+                    whileHover={shouldReduceMotion ? {} : { scale: 1.2 }}
+                    transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3 }}
+                  >
+                    <Linkedin className="w-6 h-6 text-primary" />
+                  </motion.div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">LinkedIn</p>
+                    <p className="font-semibold text-foreground">Ashikur Rahaman</p>
+                  </div>
+                </motion.a>
               </div>
-
-              <div>
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  data-testid="input-contact-email"
-                />
-              </div>
-
-              <div>
-                <Textarea
-                  placeholder="Your Message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  data-testid="input-contact-message"
-                />
-              </div>
-
-              <Button type="submit" className="w-full group" data-testid="button-submit-contact">
-                Send Message
-                <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </form>
-          </Card>
-
-          <Card className="p-8 bg-card/50 backdrop-blur-sm border-card-border">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <a
-                href="mailto:Ash@spudblocks.com"
-                className="flex items-center gap-4 p-4 rounded-lg bg-accent/50 hover-elevate group reduced-motion-safe:hover-sparkle"
-                data-testid="link-email"
-              >
-                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors reduced-motion-safe:hover-sparkle">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-semibold text-foreground">Ash@spudblocks.com</p>
-                </div>
-              </a>
-
-              <a
-                href="tel:+8801619617036"
-                className="flex items-center gap-4 p-4 rounded-lg bg-accent/50 hover-elevate group"
-                data-testid="link-phone"
-              >
-                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors reduced-motion-safe:hover-sparkle">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-semibold text-foreground">+880 1619-617036</p>
-                </div>
-              </a>
-
-              <a
-                href="https://linkedin.com/in/ashik-the-knight"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-lg bg-accent/50 hover-elevate group"
-                data-testid="link-linkedin"
-              >
-                <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors reduced-motion-safe:hover-sparkle">
-                  <Linkedin className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">LinkedIn</p>
-                  <p className="font-semibold text-foreground">Ashikur Rahaman</p>
-                </div>
-              </a>
-
-              <div className="pt-6 border-t border-border">
-                <p className="text-sm text-muted-foreground">
-                  Looking forward to discussing how we can work together to drive innovation in the
-                  Web3 and FinTech space.
-                </p>
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </motion.div>
         </div>
       </div>
     </section>

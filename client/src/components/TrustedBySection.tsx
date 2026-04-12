@@ -2,19 +2,15 @@ import { Badge } from '@/components/ui/badge';
 
 const companies = [
   'Hotbit',
-  'Bybit',
+  'Tapbit Exchange',
   'MEXC',
-  'Biconomy',
-  'Tapbit',
-  'Gate.io',
-  'AscendEX',
-  'Bitrue',
-  'Probit',
-  'BitForex',
-  'Plutusfi',
-  'Kesef Finance',
+  'Copx AI',
   'Goose Finance',
-
+  'Kesef Finance',
+  'Joker Manor',
+  'Coinverse',
+  'PlutusFi',
+  'ERA7',
 ];
 
 export default function TrustedBySection() {

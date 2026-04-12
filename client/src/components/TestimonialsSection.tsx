@@ -3,6 +3,12 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
+    name: 'Katherine',
+    title: 'Managing Director - Tapbit',
+    quote:
+      'Ashikur has been instrumental in scaling our exchange to serve 220K+ active community members. His strategic leadership and ability to build partnerships have been game-changing for our platform.',
+  },
+  {
     name: 'Anndy Lian',
     title: 'Chairman - INB Blockchain',
     quote:
@@ -10,9 +16,9 @@ const testimonials = [
   },
   {
     name: 'Zenne Zheng',
-    title: 'CMO - One Capital',
+    title: 'Founder - JokerManor',
     quote:
-      'Working with Ashikur has been transformative for our fintech initiatives. His deep understanding of both business development and blockchain technology sets him apart in the industry.',
+      'Working with Ashikur has been transformative for our GameFi ecosystem. His deep understanding of both business development and blockchain technology sets him apart in the industry.',
   },
   {
     name: 'Aurora Zhou',
@@ -22,7 +28,7 @@ const testimonials = [
   },
   {
     name: 'Rosa Wong',
-    title: 'Managing Director - Bybit Exchange',
+    title: 'Managing Director - PlutusFi',
     quote:
       'A true visionary in the Web3 space. Ashikur\'s strategic partnerships and innovative approach to business development have helped us achieve remarkable growth in competitive markets.',
   },

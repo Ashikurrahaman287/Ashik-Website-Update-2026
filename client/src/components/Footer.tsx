@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <p className="text-sm text-muted-foreground">
-              © 2018-2025 Ashikur Rahaman. All Rights Reserved.
+              © 2018-2026 Ashikur Rahaman. All Rights Reserved.
             </p>
           </div>
 

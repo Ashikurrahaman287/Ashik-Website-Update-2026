@@ -5,79 +5,37 @@ import { useRef } from 'react';
 
 const experiences = [
   {
-    company: 'Saga Lab',
-    role: 'Software Engineer',
-    period: 'Mar 2025 - Present',
+    company: 'Ascendex Exchange',
+    role: 'Business Executive',
+    period: 'Aug 2025 - Apr 2026',
     achievements: [
-      'Saga Lab is an interdisciplinary AI innovation research lab dedicated to integrating artificial intelligence into the humanities',
-      'Developing culturally and linguistically competent AI systems',
-      'Revolutionizing teaching, learning, and research through AI integration',
+      'Developed strategic partnerships with crypto projects for exchange listings',
+      'Managed outreach to new blockchain startups and token teams',
+      'Conducted market research to identify potential listing candidates',
+      'Coordinated with marketing and listing teams to onboard new projects',
+      'Generated new business opportunities and partnership leads in the Web3 ecosystem',
     ],
   },
   {
-    company: 'Copx.AI',
-    role: 'Business Development Manager',
-    period: 'Mar 2024 - Sep 2025',
+    company: 'Tapbit Exchange',
+    role: 'Community & Business Development Manager',
+    period: 'Jun 2023 - Aug 2025',
     achievements: [
-      'Spearheaded community-driven governance through smart contracts',
-      'Increased client acquisition by 20% through strategic partnerships',
-      'Bridged traditional finance with cryptocurrency',
+      'Managed global crypto communities with 220K+ users across Telegram, Discord, and Twitter',
+      'Built strategic partnerships with blockchain founders, contributing to listing pipeline growth',
+      'Organized marketing campaigns and listing promotions for upcoming projects',
+      'Supported token listing negotiations and project onboarding',
     ],
   },
   {
-    company: 'IoTeX',
-    role: 'dApp Developer - Contract',
-    period: 'Feb 2024 - Mar 2025',
+    company: 'Hotbit Exchange',
+    role: 'Customer Support Manager',
+    period: 'Apr 2019 - May 2023',
     achievements: [
-      'Developed decentralized applications on IoTeX blockchain platform',
-      'Connected physical devices to decentralized networks for secure data flow',
-      'Enabled real-time data flow for AI systems and dApps',
-    ],
-  },
-  {
-    company: 'Tapbit.com',
-    role: 'Business Development Manager',
-    period: 'Mar 2022 - Aug 2023',
-    achievements: [
-      'Drove a 30% rise in revenue growth',
-      'Increased customer retention by 15% via new product launches',
-    ],
-  },
-  {
-    company: 'Biconomy',
-    role: 'Operation Manager',
-    period: 'Sep 2021 - Jul 2022',
-    achievements: [
-      'Managed operations for centralized cryptocurrency exchange serving global users',
-      'Optimized spot and futures trading, staking, and cryptocurrency services',
-      'Enhanced user experience with improved security measures and interface',
-    ],
-  },
-  {
-    company: 'Plutusfi.io',
-    role: 'Business Development Manager',
-    period: 'Jan 2021 - Jan 2023',
-    achievements: [
-      'Established key partnerships enhancing market presence',
-      'Led marketing campaigns that increased user participation',
-    ],
-  },
-  {
-    company: 'Spudblocks.com',
-    role: 'Business Development Manager',
-    period: 'Feb 2018 - Sep 2023',
-    achievements: [
-      'Streamlined project timelines by 25%',
-      'Achieved a client satisfaction rate of 97% in 2023',
-    ],
-  },
-  {
-    company: 'Coinverse.com',
-    role: 'Business Development Manager',
-    period: 'Mar 2018 - Jan 2020',
-    achievements: [
-      'Developed business strategies aligned with industry trends',
-      'Boosted brand visibility through influencer partnerships',
+      'Led customer support operations for global crypto exchange users',
+      'Resolved complex trading, deposit, and withdrawal issues',
+      'Managed support team workflows and response efficiency',
+      'Maintained high customer satisfaction through fast issue resolution',
     ],
   },
 ];

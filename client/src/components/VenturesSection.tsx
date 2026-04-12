@@ -28,14 +28,6 @@ const ventures = [
     gradient: 'from-chart-5 to-chart-3',
   },
   {
-    name: 'AscendEX',
-    role: 'Board Member',
-    period: '2024 - Present',
-    description: `AscendEX (formerly known as BitMax) is a global cryptocurrency exchange platform that offers a comprehensive suite of financial services for both retail and institutional clients. Founded in 2018 by a group of Wall Street quantitative trading veterans, it is headquartered in Singapore and known for integrating centralized exchange features with elements from the decentralized finance (DeFi) ecosystem.`,
-    logo: ascendexLogo,
-    gradient: 'from-chart-4 to-primary',
-  },
-  {
     name: 'AGT Venture',
     role: 'Board Member',
     period: '2022 - Present',

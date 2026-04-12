@@ -12,13 +12,13 @@ export default function AboutSection() {
 
         <Card className="p-8 md:p-12 bg-card/50 backdrop-blur-sm border-card-border hover-elevate">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            I am a <span className="text-foreground font-semibold">dynamic and proactive professional</span> with{' '}
-            <span className="text-primary font-semibold">10+ years of experience</span> in the Fintech and
-            Blockchain industry, specializing in business growth and development. Known for my exceptional
-            work ethic and sharp problem-solving abilities, I excel at identifying and capitalizing on
-            opportunities. With a focused mindset, I take the initiative to drive{' '}
-            <span className="text-foreground font-semibold">sustainable business growth</span>, leveraging
-            my diverse skill set to manage, develop, and scale businesses effectively.
+            <span className="text-foreground font-semibold">Web3 Business Development Executive</span> with{' '}
+            <span className="text-primary font-semibold">10+ years of experience</span> in cryptocurrency exchanges, blockchain
+            ecosystems, and digital asset markets. Proven track record in exchange listings, strategic partnerships, and
+            ecosystem expansion. Experienced in operations management, team leadership, and cross-functional coordination to
+            scale business growth in fast-moving Web3 environments. Skilled at identifying high-potential blockchain projects,
+            negotiating strategic collaborations, and driving adoption through global partnerships. Adept at leading teams,
+            optimizing operational workflows, and supporting exchange growth within the evolving digital asset landscape.
           </p>
         </Card>
       </div>

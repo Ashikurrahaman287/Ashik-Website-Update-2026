@@ -1,74 +1,81 @@
 SEO & Launch Checklist
+
 Page Titles & Meta:
 
-Title tag (unique per page): e.g.
-Home: Ashikur Rahaman | Web3 BD Leader, Founder & Blockchain Product Builder (as given).
-About: About | Ashikur Rahaman – Web3 & Fintech Entrepreneur.
-Projects: Projects | Ashikur Rahaman – Blockchain & AI Products.
-Meta descriptions (brief summary, ≤155 chars): e.g.
-“Portfolio of Ashikur Rahaman, Web3 Business Dev Executive. Founder of SpudBlocks & Saga Lab, focused on blockchain products, fintech, AI SaaS, and strategic partnerships.”
-This helps Google/SERPs (Rich Snippet).
-Use keywords naturally: “Web3”, “Blockchain Developer”, “Fintech Entrepreneur”, etc.
+Use a unique title tag and meta description for every page.
+Home: Ashikur Rahaman | Web3 BD Leader, Founder & Blockchain Product Builder
+About: About | Ashikur Rahaman – Web3 & Fintech Entrepreneur
+Projects: Projects | Ashikur Rahaman – Blockchain & AI Products
+Services: Services | Ashikur Rahaman – Web3 Growth & Product Services
+Contact: Contact | Ashikur Rahaman – Let’s Build the Future of Web3
+
+Meta descriptions should stay concise and keyword-rich.
+Example: “Portfolio of Ashikur Rahaman, Web3 business development executive and founder of SpudBlocks & Saga Lab, focused on blockchain, fintech, AI SaaS, and strategic partnerships.”
+
 Open Graph / Twitter Cards:
 
-Add <meta property="og:title" ...> (same as page title) and <meta name="twitter:title" ...>.
-Add <meta property="og:description" ...> and <meta name="twitter:description" ...> (same as meta description).
-Add <meta property="og:image" ...> pointing to a sharing image (e.g. 1200×630 with headshot or brand logo). Also <meta name="twitter:image" ...>.
-Add <meta property="og:url" content="https://ashik.spudblocks.com/">.
-Set og:type to “website” and twitter:card to “summary_large_image”.
-Citation: Specifying these improves social link previews
-.
+Use matching og:title and twitter:title for each page.
+Use matching og:description and twitter:description.
+Add og:image and twitter:image with a 1200x630 sharing image.
+Set og:url to the canonical page URL.
+Use og:type="website" and twitter:card="summary_large_image".
+
 robots.txt & Sitemap:
 
-robots.txt should allow crawling. E.g. User-agent: *\nAllow: /.
-Generate sitemap.xml listing all pages. Submit to Google Search Console.
+Allow crawling in robots.txt.
+Generate a sitemap.xml covering all public pages.
+Submit the sitemap to Google Search Console.
+
 Canonicalization:
 
-Add <link rel="canonical"> on each page to avoid duplicate content issues (especially if params). Set to the main URL.
+Add a canonical link on each page to the main URL.
+
 Analytics & Verification:
 
-Insert Google Analytics (GA4) or alternative script before </head>.
-Add Google Site Verification meta tag.
-In GSC, verify site and submit sitemap.
+Add GA4 or a privacy-friendly analytics script.
+Add Google Site Verification if needed.
+Track Resume, Contact, and Case Study clicks.
+
 Structured Data Testing:
 
-Use Google’s Rich Results Test or Schema Markup Validator to check JSON-LD. Fix any errors.
-Test that Person/Org rich snippets render without errors.
+Validate JSON-LD with Google Rich Results Test or Schema Markup Validator.
+Fix any schema errors before launch.
+
 Accessibility Testing:
 
-Use Lighthouse or axe Chrome plugin to check contrast, alt texts, ARIA. Fix failures (e.g. ensure alt on decorative vs meaningful images).
-Keyboard-only test: can you navigate all interactive elements with Tab?
+Check contrast, alt text, keyboard navigation, and ARIA with Lighthouse or axe.
+Ensure every interactive element is keyboard reachable.
+
 Performance Testing:
 
-Run Lighthouse (mobile and desktop). Aim for ≥90 scores. Address:
-LCP: ensure hero image is optimized (Next Image).
-CLS: specify image dimensions, avoid layout shifts.
-FID: minimal JS.
-Use Google PageSpeed Insights or web.dev recommendations to further optimize.
+Run Lighthouse on mobile and desktop.
+Aim for strong LCP, low CLS, and minimal JS.
+Optimize the hero image with Next Image and set explicit dimensions.
+
 Cross-Browser:
 
-Test in Chrome, Firefox, Safari, Edge (desktop and mobile). Ensure no layout breaks.
+Test in Chrome, Firefox, Safari, and Edge.
+Check mobile layouts and interactions.
+
 Final Content Review:
 
-Proofread all text. Confirm all links (LinkedIn, Twitter, email) are correct.
-Ensure resume download works and is the latest version.
-Check form submissions.
+Proofread all copy.
+Confirm links, resume download, and contact forms work.
+
 Launch:
 
-Deploy to production domain (ashik.spudblocks.com).
-Announce (optional): share on LinkedIn/Twitter that the portfolio is live (with screenshot).
-Citing best practices: Using JSON-LD and OG tags is recommended for SEO visibility
-. Quality content and performance (fast load, mobile-friendly) are essential ranking factors
-.
+Deploy to the production domain and verify the live site.
 
-7. Assets & Final Copy Blocks
-Assets List
-Profile Photo: High-res headshot (professional, tech background).
-Hero Background / Illustration: Abstract tech or blockchain image.
-Project Images/Screenshots: For Saga Inventory app, Spud Finance bot UI, SpudPay mockups, Outreach Bot spreadsheet, etc.
-Company Logos: AscendEX, Tapbit, Hotbit, COPX, AGT Venture (to use in “Trusted by” or Experience section).
-Service Icons: E.g. handshake for BD, computer for development, chart for analytics, mobile for fintech, robot for bot/AI.
+8. Assets & Final Copy Blocks
+
+Assets List:
+
+Profile Photo: High-res headshot with a professional tech background.
+Hero Background / Illustration: Abstract blockchain or AI-themed visual.
+Project Images / Screenshots: Saga Inventory, Spud Finance Tracker, SpudPay mockups, Outreach Bot, and related product shots.
+Company Logos: AscendEX, Tapbit, Hotbit, COPX, AGT Venture.
+Service Icons: Handshake for BD, computer for development, chart for analytics, mobile for fintech, robot for AI/bots.
 Social Icons: LinkedIn, Twitter, Telegram, GitHub.
-Resume PDF: polished resume file (for download link).
-Brand Logos: SpudBlocks and Saga Lab (if available).
-Favicon: a small icon (e.g. “AR” monogram or SpudBlocks logo).
+Resume PDF: polished, current resume.
+Brand Logos: SpudBlocks and Saga Lab.
+Favicon: AR monogram or SpudBlocks icon.

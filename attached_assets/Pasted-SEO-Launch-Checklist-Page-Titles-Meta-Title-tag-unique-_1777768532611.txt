@@ -1,0 +1,74 @@
+SEO & Launch Checklist
+Page Titles & Meta:
+
+Title tag (unique per page): e.g.
+Home: Ashikur Rahaman | Web3 BD Leader, Founder & Blockchain Product Builder (as given).
+About: About | Ashikur Rahaman – Web3 & Fintech Entrepreneur.
+Projects: Projects | Ashikur Rahaman – Blockchain & AI Products.
+Meta descriptions (brief summary, ≤155 chars): e.g.
+“Portfolio of Ashikur Rahaman, Web3 Business Dev Executive. Founder of SpudBlocks & Saga Lab, focused on blockchain products, fintech, AI SaaS, and strategic partnerships.”
+This helps Google/SERPs (Rich Snippet).
+Use keywords naturally: “Web3”, “Blockchain Developer”, “Fintech Entrepreneur”, etc.
+Open Graph / Twitter Cards:
+
+Add <meta property="og:title" ...> (same as page title) and <meta name="twitter:title" ...>.
+Add <meta property="og:description" ...> and <meta name="twitter:description" ...> (same as meta description).
+Add <meta property="og:image" ...> pointing to a sharing image (e.g. 1200×630 with headshot or brand logo). Also <meta name="twitter:image" ...>.
+Add <meta property="og:url" content="https://ashik.spudblocks.com/">.
+Set og:type to “website” and twitter:card to “summary_large_image”.
+Citation: Specifying these improves social link previews
+.
+robots.txt & Sitemap:
+
+robots.txt should allow crawling. E.g. User-agent: *\nAllow: /.
+Generate sitemap.xml listing all pages. Submit to Google Search Console.
+Canonicalization:
+
+Add <link rel="canonical"> on each page to avoid duplicate content issues (especially if params). Set to the main URL.
+Analytics & Verification:
+
+Insert Google Analytics (GA4) or alternative script before </head>.
+Add Google Site Verification meta tag.
+In GSC, verify site and submit sitemap.
+Structured Data Testing:
+
+Use Google’s Rich Results Test or Schema Markup Validator to check JSON-LD. Fix any errors.
+Test that Person/Org rich snippets render without errors.
+Accessibility Testing:
+
+Use Lighthouse or axe Chrome plugin to check contrast, alt texts, ARIA. Fix failures (e.g. ensure alt on decorative vs meaningful images).
+Keyboard-only test: can you navigate all interactive elements with Tab?
+Performance Testing:
+
+Run Lighthouse (mobile and desktop). Aim for ≥90 scores. Address:
+LCP: ensure hero image is optimized (Next Image).
+CLS: specify image dimensions, avoid layout shifts.
+FID: minimal JS.
+Use Google PageSpeed Insights or web.dev recommendations to further optimize.
+Cross-Browser:
+
+Test in Chrome, Firefox, Safari, Edge (desktop and mobile). Ensure no layout breaks.
+Final Content Review:
+
+Proofread all text. Confirm all links (LinkedIn, Twitter, email) are correct.
+Ensure resume download works and is the latest version.
+Check form submissions.
+Launch:
+
+Deploy to production domain (ashik.spudblocks.com).
+Announce (optional): share on LinkedIn/Twitter that the portfolio is live (with screenshot).
+Citing best practices: Using JSON-LD and OG tags is recommended for SEO visibility
+. Quality content and performance (fast load, mobile-friendly) are essential ranking factors
+.
+
+7. Assets & Final Copy Blocks
+Assets List
+Profile Photo: High-res headshot (professional, tech background).
+Hero Background / Illustration: Abstract tech or blockchain image.
+Project Images/Screenshots: For Saga Inventory app, Spud Finance bot UI, SpudPay mockups, Outreach Bot spreadsheet, etc.
+Company Logos: AscendEX, Tapbit, Hotbit, COPX, AGT Venture (to use in “Trusted by” or Experience section).
+Service Icons: E.g. handshake for BD, computer for development, chart for analytics, mobile for fintech, robot for bot/AI.
+Social Icons: LinkedIn, Twitter, Telegram, GitHub.
+Resume PDF: polished resume file (for download link).
+Brand Logos: SpudBlocks and Saga Lab (if available).
+Favicon: a small icon (e.g. “AR” monogram or SpudBlocks logo).

@@ -1,44 +1,48 @@
 Services Offered:
 
-Purpose: Show how Ashikur can help visitors (as consultant or team member). This makes the site “actionable” for leads.
-Content Goals: List 4–6 service categories with brief descriptions (icons or images). For example:
-Web3 Business Development: Exchange listings, token economy strategy, partnership pipelines.
-Blockchain & DeFi Solutions: Smart contract apps, blockchain integrations, DeFi dashboards.
-AI & SaaS Product Development: End-to-end AI/ML platforms, data analytics tools for business.
-Fintech & Wallet Architecture: Payment gateway design, custodial wallet prototyping (SpudPay concept).
-Telegram Bots & Automation: CRM/outreach bots (e.g. Google Sheets bots), finance tracking bots.
-Startup Advisory: Advising on fundraising, GTM, and scaling for crypto startups.
-Microcopy Example: Each service card has a short sentence, e.g. “Crafting tailored business development plans to get your crypto project listed on top exchanges.”
+Purpose: Position Ashikur as a Web3 business development leader and product founder. The section should convert visitors into leads by showing exactly how he helps startups, exchanges, and fintech teams.
+Content Goals: Present 4–6 service cards with concise descriptions, icons, and clear business outcomes.
+- Web3 Business Development: Exchange listings, token strategy, partnership pipelines, and growth strategy for crypto projects.
+- Blockchain & DeFi Solutions: Smart contract apps, blockchain integrations, and DeFi dashboards for modern products.
+- AI & SaaS Product Development: Full-stack AI/ML platforms, analytics tools, and business software built for scale.
+- Fintech & Wallet Architecture: Payment flows, custodial wallet concepts, and secure transaction experiences.
+- Telegram Bots & Automation: CRM bots, outreach automation, finance tracking, and workflow tools.
+- Startup Advisory: GTM planning, fundraising guidance, and scaling support for Web3 and fintech founders.
+Microcopy Example: “Crafting practical growth and product strategies that help crypto and fintech companies win partnerships, users, and trust.”
+
 Featured Projects:
 
-Purpose: Showcase Ashikur’s key initiatives and products. This section entices users to click deeper (to case studies).
-Content Goals: A grid of 4–6 project cards. Each card has: project name, one-line subtitle, key features, tech stack, and a “Learn More” (case study) button. Possibly hover effect or modal preview. Projects should include those he founded or built.
-Projects to Feature (one-line positioning): See Table A below.
-SpudBlocks: “Web3 consultancy & fintech solutions studio.” (The company Ashikur leads.)
-Saga Lab: “AI/SaaS incubator for emerging industries.” (Ashikur’s new venture.)
-Saga Inventory: “Full-stack inventory and order management SaaS.” (Built in-house.)
-Spud Finance Tracker: “Telegram + web app for personal finance monitoring.”
-SpudPay Concept: “Custodial wallet & payment network design.”
-Outreach Bot: “Google Sheets automation bot for BD pipeline.”
-Microcopy Example (for one card):
-Title: Saga Inventory – “Inventory, invoicing & analytics for small businesses.”
-Subtitle: “Problem: Manual stock tracking. Solution: Electron/React app with real-time dashboards. Tech: Node.js, PostgreSQL, Electron.”
-CTA: “View Case Study” (hover or link).
+Purpose: Showcase Ashikur’s strongest ventures and product work, guiding users toward case studies.
+Content Goals: Display 4–6 project cards with a short summary, key features, tech stack, and a “View Case Study” button.
+Projects to Feature:
+- SpudBlocks: Web3 consultancy and fintech solutions studio.
+- Saga Lab: AI and SaaS incubator focused on emerging industries.
+- Saga Inventory: Full-stack inventory and order management SaaS for small businesses.
+- Spud Finance Tracker: Telegram and web app for personal finance monitoring.
+- SpudPay Concept: Custodial wallet and payment network design.
+- Outreach Bot: Google Sheets automation bot for business development pipelines.
+Microcopy Example:
+Title: Saga Inventory – “Inventory, invoicing, and analytics for small businesses.”
+Subtitle: “Solves manual stock tracking with a clean Electron and React app backed by Node.js, PostgreSQL, and real-time dashboards.”
+CTA: “View Case Study”
+
 Case Studies (Dedicated Pages):
 
-Purpose: Provide in-depth stories for key projects. Converts interest into understanding of Ashikur’s process and results.
-Content Goals: For 3–4 major projects (e.g. Saga Inventory, Spud Finance, SpudPay Concept, maybe SpudBlocks brand/story). Each case study page follows a pattern: Problem → Solution → Features → Tech Stack → Business Value → [CTA/button] (e.g. “Get a similar solution”). Use visuals (screenshots, diagrams, code snippets).
+Purpose: Provide deeper proof of Ashikur’s process, product thinking, and business impact.
+Content Goals: Build 3–4 detailed case study pages that follow: Problem → Solution → Features → Tech Stack → Business Value → CTA.
 Microcopy Template Example:
 Problem: “Many startups struggle to manage inventory and invoicing without expensive ERP systems.”
 Solution: “Saga Inventory is a self-hosted app that handles stock, invoices, and reports in one place.”
-Key Features: “Multi-warehouse support, real-time sales reports, invoice generation, user roles.”
+Key Features: “Multi-warehouse support, real-time sales reports, invoice generation, and user roles.”
 Tech Stack: “React, Node.js, PostgreSQL, Electron, WebSockets.”
 Business Value: “Empowered SMEs to double their order processing speed and cut inventory errors by 60%.”
-CTA: “Explore how Saga Inventory can streamline your business” (button).
+CTA: “Explore how Saga Inventory can streamline your business”
+
 Testimonials / Social Proof:
 
-Purpose: Build trust via endorsements and recognizable logos.
-Content Goals: Include logos of companies/projects Ashikur has worked with or advised (AscendEX, Hotbit, Tapbit, COPX, AGT Venture, etc.). Optionally, one or two short quotes from colleagues/clients (if available). If not, omit quotes and just show logos with “Trusted By” heading.
+Purpose: Build trust with recognizable names and logos from Ashikur’s network.
+Content Goals: Include logos and references such as AscendEX, Tapbit, Hotbit, COPX, and AGT Venture. If available, add short testimonials from partners or clients.
 Microcopy Example:
-Heading: “Trusted By”. Subhead: “Blockchain exchanges, startups, and clients I’ve partnered with.”
+Heading: “Trusted By”
+Subhead: “Blockchain exchanges, startups, and partners I’ve worked with.”
 (Logos: AscendEX, Tapbit, Hotbit, COPX, AGT, etc.)

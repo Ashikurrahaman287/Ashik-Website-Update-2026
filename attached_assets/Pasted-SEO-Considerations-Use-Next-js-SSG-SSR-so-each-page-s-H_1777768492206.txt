@@ -1,0 +1,80 @@
+SEO Considerations:
+
+Use Next.js SSG/SSR so each page’s HTML includes content and meta tags (no need for client-side rendering)
+.
+Add <title> and <meta name="description"> for each page. Meta tags should use targeted keywords (given below).
+Add Open Graph (og:title, og:description, og:image, og:url, og:type) and Twitter Card meta tags in <head>
+. Example:
+html
+Copy
+<meta property="og:title" content="Ashikur Rahaman | Web3 BD Leader, Founder & Blockchain Product Builder">
+<meta property="og:description" content="Ashikur Rahaman – Founder of SpudBlocks & Saga Lab, Web3 business development executive focusing on blockchain, fintech, and AI SaaS solutions.">
+<meta property="og:image" content="https://ashik.spudblocks.com/images/og-profile.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+(Replace content with real URL/path.)
+Include <link rel="canonical" href="https://ashik.spudblocks.com/">.
+Structured Data (JSON-LD):
+
+In <head>, add a <script type="application/ld+json"> with Person schema for Ashikur and Organization schema for SpudBlocks/Saga Lab. For example (adapted from schema.org and Google examples
+):
+json
+Copy
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ashikur Rahaman",
+  "jobTitle": "Web3 Business Development Executive",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "AscendEX"
+  },
+  "alumniOf": "University or major education (if applicable)",
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "SpudBlocks",
+      "sameAs": "https://spudblocks.com"
+    },
+    {
+      "@type": "Organization",
+      "name": "Saga Lab",
+      "sameAs": "https://sagalab.ai"
+    }
+  ],
+  "url": "https://ashik.spudblocks.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/ashik-the-knight",
+    "https://twitter.com/ashik_spud",
+    "https://github.com/ashikrahman"
+  ]
+}
+Similarly, an Organization schema can be added on the homepage or about page for SpudBlocks and Saga Lab
+.
+This helps search engines generate rich results (knowledge panel)
+.
+Analytics & Tracking:
+
+Integrate Google Analytics (GA4) or a lightweight tracker (e.g. Plausible, Fathom) for visitor insights. Include GA script in _app.js or via Next.js Head.
+Track events: clicks on “Download Resume”, “Contact” button, project “View Case Study” clicks.
+Ensure cookie consent if required (depending on region).
+Contact Form Handling:
+
+Option A: Use a serverless function (API route) in Next.js to handle POST from a form, sending an email (via SendGrid/Mailgun). Secure with reCAPTCHA.
+Option B: Use Formspree or similar to handle form submissions. In either case, ensure responses show success/failure.
+Track form submissions with an Analytics event.
+Resume Download:
+
+Place resume.pdf in /public. Link it via <a href="/resume.pdf" download>Download Resume</a>. Use an onClick event to fire analytics.
+Ensure PDF is optimized (text-embedded, not scanned image, for searchability).
+File Names & SEO:
+
+Use descriptive filenames for images (ashik-profile.jpg, spudpay-screenshot.png).
+Add alt text that describes the image. Example: alt="Ashikur Rahaman speaking at blockchain conference"
+.
+CI/CD & Monitoring:
+
+Setup GitHub Actions or Vercel auto-deploy on push to main.
+Use Git versioning for content (e.g. project details in Markdown/MDX).
+Optionally configure preview deployments for pull requests.
+After launch, monitor Google Search Console for indexing issues and Lighthouse for performance regressions.

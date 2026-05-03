@@ -4,45 +4,37 @@ Menu (top navigation): Home, About, Experience, Projects, Services, Case Studies
 Home (Hero Section):
 
 Purpose: Introduce Ashikur and his value proposition, and drive action.
-Content Goals: Big headline (name + roles), brief tagline (elevator pitch), hero image or graphic, 2–3 CTA buttons (e.g. “Work With Me”, “View Projects”, “Download Resume”), and quick trust tags (e.g. “AscendEX BD Executive”, “Founder, SpudBlocks & Saga Lab”, “Web3 Since 2019”).
+Content Goals: Big headline (name + roles), brief tagline (elevator pitch), hero image or graphic, 2–3 CTA buttons, and quick trust tags.
 Microcopy Example:
-Headline: “I’m Ashikur Rahaman – Web3 BD Leader & Founder.”
-Tagline: “I help crypto startups and fintech companies grow through strategic partnerships, listings, and innovative blockchain/AI products.”
-CTAs: “Contact Me”, “My Projects”, “Download Resume”.
-Design: Full-screen with dark background and subtle blockchain-themed graphics (blocks or network patterns), a professional portrait or avatar of Ashikur.
+Headline: “I’m Ashikur Rahaman – Web3 BD Leader, Founder & Product Builder.”
+Tagline: “I help crypto startups and fintech teams grow through strategic partnerships, listings, and AI-powered products.”
+CTAs: “Contact Me”, “View Projects”, “Download Resume”.
+Design: Full-screen with dark background and subtle blockchain-themed graphics, plus a professional portrait or avatar.
+
 About Section:
 
 Purpose: Summarize Ashikur’s background, mission, and core expertise.
-Content Goals: Two-column or split-layout: left for an image or iconography, right for text. Emphasize his current roles (AscendEX, SpudBlocks, Saga Lab, COPX, etc.) and his vision. Include 2–3 bullet “Key Stats” (years experience, number of projects, notable companies).
+Content Goals: Two-column or split-layout with an image or visual on one side and concise bio on the other. Highlight current roles and vision. Include 2–3 key stats.
 Microcopy Example:
-Intro Paragraph: “I’m Ashikur Rahaman, a blockchain and fintech innovator with 10+ years of experience. As Founder of SpudBlocks and Saga Lab and a BD Executive at AscendEX, I build Web3 products and drive exchange partnerships. I’m passionate about using AI and blockchain to solve real-world problems.”
-Key Stats (bulleted): “5+ years in Crypto & Web3 | Former BD Lead at Hotbit & Tapbit | Built 10+ SaaS products.”
+Intro Paragraph: “I’m Ashikur Rahaman, a Web3 business development leader and product founder with 10+ years of experience across blockchain, fintech, and AI SaaS. As CEO of SpudBlocks, Founder of Saga Lab, BD Executive at AscendEX, and Advisor at COPX, I build products, partnerships, and growth systems that solve real business problems.”
+Key Stats: “10+ years in tech and business development | Founded SpudBlocks and Saga Lab | Built and advised multiple Web3 and SaaS ventures.”
+
 Experience Timeline:
 
-Purpose: Show Ashikur’s career progression (roles, dates, companies) in visual form. Timelines convey credibility and history
-.
-
-Content Goals: Chronological list of positions (year – role at company). Possibly interactive slider or vertical list with year labels. Include company logos (AscendEX, Tapbit, Hotbit, SpudBlocks, Saga Lab, COPX) to reinforce brand trust.
-
+Purpose: Show Ashikur’s career progression in a clear chronological format.
+Content Goals: List major roles by year or date, include company logos, and keep each item brief with a short achievement line.
 Microcopy Example:
-
 “2025–Now: Founder & MD, Saga Lab – Building AI-driven SaaS solutions.”
 “2023–Now: BD Executive, AscendEX – Leading exchange partnerships and listings.”
 “2021–2023: Founder & CEO, SpudBlocks – Grew a blockchain fintech agency into an AI/SaaS studio.”
-“2019–2021: Business Dev Lead, Tapbit & Hotbit Exchanges – Secured listings, launched token programs.”
-(Use icons or colors to differentiate roles.)
-Example: Many sites use interactive timelines to tell a story. For inspiration, Airbnb’s timeline uses card slides with images and captions
-. The figure below shows how Airbnb highlights key years (with images) in a clean slider format.
-
-Figure: Example timeline slider (Airbnb’s founding history) showing milestones with images
-.
+“2019–2021: Business Dev Lead, Tapbit & Hotbit Exchanges – Secured listings and launched token programs.”
 
 Business Impact (Achievements):
 
-Purpose: Highlight concrete results from Ashikur’s work (metrics, success stories). Focuses on outcomes rather than just roles or skills.
-Content Goals: A few bullet statements or stats (with optional counters/animations). E.g. “Secured 15+ exchange listings for clients”, “Built 3 AI-powered SaaS MVPs”, “Onboarded 50+ Web3 projects”, “Helped projects raise $X million through partnerships”. Use icons (graph, chart, handshake) to illustrate impact.
+Purpose: Highlight concrete results from Ashikur’s work.
+Content Goals: Use concise, metric-driven bullet points with icons.
 Microcopy Example:
-“🔗 Partner Networks: Developed listing pipelines across 10+ global exchanges for crypto startups, doubling their market reach.”
-“📈 Growth Outcomes: Enabled projects to grow trading volume by 20–50% via strategic token/partnership launches.”
-“🛠 Product Leadership: Led development of Saga Inventory (full-stack stock management SaaS) and SpudPay fintech wallet concept.”
-“🤝 Strategic Alliances: Advised and connected startups with investors and tech partners through COPX and AGT networks.”
+“🔗 Built partnership pipelines across 10+ global exchanges for crypto startups.”
+“📈 Helped projects grow trading volume by 20–50% through strategic token and partnership launches.”
+“🛠 Led development of Saga Inventory and SpudPay concept work.”
+“🤝 Connected startups with investors, advisors, and technical partners through COPX and AGT networks.”

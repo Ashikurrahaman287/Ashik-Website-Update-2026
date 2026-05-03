@@ -1,0 +1,43 @@
+Testimonials (Quotes):
+
+Prompt: If real quotes exist, use them. If not, create 1–2 short paraphrased quotes from a client or colleague.
+Example: “Ashikur’s strategic guidance took our token launch to the next level.”
+Example: “His technical insight was invaluable in building our app.”
+Ask: Keep them short and attribute them to generic roles if needed.
+
+Contact CTA:
+
+Prompt: Craft a friendly invitation to connect and emphasize multiple contact methods.
+Ask: The tone should feel welcoming, confident, and action-oriented.
+Example: “Let’s connect and innovate together.”
+
+Footer Copy:
+
+Prompt: Include a short list of links and a copyright line.
+Ask: Keep it minimal and clean.
+Example: “© 2026 Ashikur Rahaman. Site by Ashikur Rahaman.”
+
+3. Design & UI Brief
+
+Overall Theme: Dark, professional palette with neon/tech accent colors for a modern Web3 and AI feel.
+Color Palette:
+Primary BG: #0E131F or #121827
+Accent 1: #4C84FF
+Accent 2: #00FFC7 or #FF4C4C
+Text: #FFFFFF for headings, #A0A0A0 for body text
+Buttons: Accent color backgrounds with white text and subtle hover glow.
+Typography:
+Headings: Bold geometric sans-serif
+Body: Clean sans-serif
+Layout & Spacing:
+Hero: Full-screen above the fold with text on one side and a portrait or illustration on the other.
+Grid: Responsive 12-column layout.
+Cards: Glassy, rounded-corner cards with hover lift.
+Sections: Clear separation and generous spacing.
+Responsive Behavior:
+Navigation collapses into hamburger menu on mobile.
+Timeline becomes a vertical list on small screens.
+Project cards stack in one column on narrow screens.
+Ensure touch targets are large enough for accessibility.
+Interactions & Animations:
+Use subtle fade-in scroll animations, animated counters for stats, hover glow on cards, and lightweight loading states.

@@ -8,8 +8,8 @@ const contacts = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'Ashik@Spudblocks.com',
-    href: 'mailto:Ashik@Spudblocks.com',
+    value: 'Ashik@SpudBlocks.com',
+    href: 'mailto:Ashik@SpudBlocks.com',
     testId: 'link-email',
   },
   {
@@ -141,7 +141,7 @@ export default function ContactSection() {
                 className="w-full bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#0A0F1C] font-semibold"
                 asChild
               >
-                <a href="mailto:Ashik@Spudblocks.com" data-testid="button-send-email">
+                <a href="mailto:Ashik@SpudBlocks.com" data-testid="button-send-email">
                   <Send className="w-4 h-4 mr-2" />
                   Send a Message
                 </a>

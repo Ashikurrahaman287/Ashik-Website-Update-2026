@@ -75,11 +75,11 @@ export default function AboutSection() {
             <div className="col-span-2 p-6 rounded-2xl bg-gradient-to-r from-[#00D4FF]/10 to-[#6366F1]/10 border border-[#00D4FF]/20">
               <p className="text-[#64748B] text-xs font-medium uppercase tracking-wider mb-2">Contact</p>
               <a
-                href="mailto:Ashik@Spudblocks.com"
+                href="mailto:Ashik@SpudBlocks.com"
                 className="text-[#00D4FF] font-semibold text-lg hover:underline"
                 data-testid="link-about-email"
               >
-                Ashik@Spudblocks.com
+                Ashik@SpudBlocks.com
               </a>
             </div>
           </motion.div>

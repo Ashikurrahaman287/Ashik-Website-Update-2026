@@ -12,7 +12,13 @@ interface CounterProps {
   started: boolean;
 }
 
-function AnimatedCounter({ end, prefix = '', suffix = '', duration = 1800, delay = 0, started }: CounterProps) {
+// Ease-in-out quad: starts slow, speeds up in the middle, slows to a stop
+// This makes each individual tick visible at the start so the counter feels real
+function easeInOutQuad(t: number) {
+  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+}
+
+function AnimatedCounter({ end, prefix = '', suffix = '', duration = 2800, delay = 0, started }: CounterProps) {
   const [count, setCount] = useState(0);
   const [done, setDone] = useState(false);
   const rafRef = useRef<number>(0);
@@ -28,9 +34,8 @@ function AnimatedCounter({ end, prefix = '', suffix = '', duration = 1800, delay
       const tick = (currentTime: number) => {
         if (startTime === null) startTime = currentTime;
         const progress = Math.min((currentTime - startTime) / duration, 1);
-        // Ease-out cubic for natural deceleration
-        const eased = 1 - Math.pow(1 - progress, 3);
-        setCount(Math.round(eased * end));
+        const eased = easeInOutQuad(progress);
+        setCount(Math.floor(eased * end));
         if (progress < 1) {
           rafRef.current = requestAnimationFrame(tick);
         } else {
@@ -57,11 +62,11 @@ function AnimatedCounter({ end, prefix = '', suffix = '', duration = 1800, delay
 
 const stats = [
   { value: 87,  prefix: '$', suffix: 'M+',  label: 'Venture Capital Backing',  delay: 0 },
-  { value: 15,  prefix: '',  suffix: 'M+',  label: 'Active Users Served',       delay: 120 },
-  { value: 220, prefix: '',  suffix: 'K+',  label: 'Community Members',         delay: 240 },
-  { value: 250, prefix: '',  suffix: '+',   label: 'Strategic Partnerships',    delay: 360 },
-  { value: 50,  prefix: '',  suffix: '+',   label: 'Blockchain Projects',       delay: 480 },
-  { value: 99,  prefix: '',  suffix: '.9%', label: 'Platform Uptime',           delay: 600 },
+  { value: 15,  prefix: '',  suffix: 'M+',  label: 'Active Users Served',       delay: 200 },
+  { value: 220, prefix: '',  suffix: 'K+',  label: 'Community Members',         delay: 400 },
+  { value: 250, prefix: '',  suffix: '+',   label: 'Strategic Partnerships',    delay: 600 },
+  { value: 50,  prefix: '',  suffix: '+',   label: 'Blockchain Projects',       delay: 800 },
+  { value: 99,  prefix: '',  suffix: '.9%', label: 'Platform Uptime',           delay: 1000 },
 ];
 
 interface HeroSectionProps {

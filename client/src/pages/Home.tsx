@@ -25,8 +25,8 @@ export default function Home() {
   const handleLoaderComplete = useCallback(() => {
     // Step 1: fade in the hero page
     setHeroVisible(true);
-    // Step 2: start counters only after the hero's 500ms fade-in finishes (+100ms buffer)
-    setTimeout(() => setCountersReady(true), 600);
+    // Step 2: start counters after the hero's 500ms fade-in + a clear pause
+    setTimeout(() => setCountersReady(true), 1000);
   }, []);
 
   return (

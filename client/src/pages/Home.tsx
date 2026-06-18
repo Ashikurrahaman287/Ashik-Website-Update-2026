@@ -3,15 +3,18 @@ import BlockchainBackground from '@/components/BlockchainBackground';
 import TechParticles from '@/components/TechParticles';
 import Navigation from '@/components/Navigation';
 import LoaderAnimation from '@/components/LoaderAnimation';
+import ScrollProgressBar from '@/components/ScrollProgressBar';
+import BackToTop from '@/components/BackToTop';
 import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
 import TrustedBySection from '@/components/TrustedBySection';
-import SkillsSection from '@/components/SkillsSection';
+import AboutSection from '@/components/AboutSection';
 import VenturesSection from '@/components/VenturesSection';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
+import ServicesSection from '@/components/ServicesSection';
+import SkillsSection from '@/components/SkillsSection';
 import ContractProjectsSection from '@/components/ContractProjectsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import AwardsSection from '@/components/AwardsSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -25,6 +28,8 @@ export default function Home() {
   return (
     <>
       <LoaderAnimation onComplete={handleLoaderComplete} />
+      <ScrollProgressBar />
+      <BackToTop />
 
       <div
         className="relative min-h-screen overflow-hidden"
@@ -43,6 +48,7 @@ export default function Home() {
           <AboutSection />
           <VenturesSection />
           <ExperienceTimeline />
+          <ServicesSection />
           <SkillsSection />
           <ContractProjectsSection />
           <AwardsSection />

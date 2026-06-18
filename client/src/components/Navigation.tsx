@@ -4,22 +4,45 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Ventures', href: '#ventures' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#contract-projects' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ];
 
+const sectionIds = navItems.map((n) => n.href.slice(1));
+
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Active section via IntersectionObserver
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   const scrollToSection = (href: string) => {
@@ -34,35 +57,47 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0A0F1C]/90 backdrop-blur-xl border-b border-[#1F2937]'
+          ? 'bg-[#0A0F1C]/90 backdrop-blur-xl border-b border-[#1F2937]/80'
           : 'bg-transparent'
       }`}
       data-testid="navigation-main"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <button
             onClick={() => scrollToSection('#hero')}
-            className="text-lg font-bold text-white hover:text-[#00D4FF] transition-colors"
+            className="text-base sm:text-lg font-bold text-white hover:text-[#00D4FF] transition-colors flex-shrink-0"
             data-testid="button-logo"
           >
             Ashikur <span className="text-[#00D4FF]">Rahaman</span>
           </button>
 
-          <div className="hidden lg:flex items-center gap-6">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-[#94A3B8] hover:text-white transition-colors"
-                data-testid={`link-nav-${item.label.toLowerCase()}`}
-              >
-                {item.label}
-              </button>
-            ))}
+          {/* Desktop links */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1);
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`relative px-3 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? 'text-white'
+                      : 'text-[#94A3B8] hover:text-white hover:bg-[#ffffff08]'
+                  }`}
+                  data-testid={`link-nav-${item.label.toLowerCase()}`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-3 right-3 h-px bg-[#00D4FF] rounded-full" />
+                  )}
+                </button>
+              );
+            })}
             <Button
               size="sm"
-              className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#0A0F1C] font-semibold text-sm px-5 ml-2 hover:scale-[1.02] transition-all"
+              className="ml-3 bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#0A0F1C] font-semibold text-sm px-5 hover:scale-[1.02] transition-all"
               onClick={() => scrollToSection('#contact')}
               data-testid="button-nav-cta"
             >
@@ -70,10 +105,11 @@ export default function Navigation() {
             </Button>
           </div>
 
+          {/* Mobile hamburger */}
           <Button
             size="icon"
             variant="ghost"
-            className="lg:hidden text-white hover:bg-[#1F2937]"
+            className="lg:hidden text-white hover:bg-[#1F2937] w-9 h-9"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="button-menu-toggle"
           >
@@ -81,24 +117,35 @@ export default function Navigation() {
           </Button>
         </div>
 
+        {/* Mobile menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 space-y-1 border-t border-[#1F2937] pt-4">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-sm font-medium text-[#94A3B8] hover:text-white transition-colors py-2 px-2 rounded-lg hover:bg-[#111827]"
-                data-testid={`link-mobile-nav-${item.label.toLowerCase()}`}
+          <div className="lg:hidden mt-3 pb-3 space-y-0.5 border-t border-[#1F2937] pt-3">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1);
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`flex items-center gap-2 w-full text-left text-sm font-medium py-2.5 px-3 rounded-xl transition-all ${
+                    isActive
+                      ? 'text-[#00D4FF] bg-[#00D4FF]/8'
+                      : 'text-[#94A3B8] hover:text-white hover:bg-[#111827]'
+                  }`}
+                  data-testid={`link-mobile-nav-${item.label.toLowerCase()}`}
+                >
+                  {isActive && <span className="w-1 h-1 rounded-full bg-[#00D4FF] flex-shrink-0" />}
+                  {item.label}
+                </button>
+              );
+            })}
+            <div className="pt-2">
+              <Button
+                className="w-full bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#0A0F1C] font-semibold"
+                onClick={() => scrollToSection('#contact')}
               >
-                {item.label}
-              </button>
-            ))}
-            <Button
-              className="w-full mt-3 bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#0A0F1C] font-semibold"
-              onClick={() => scrollToSection('#contact')}
-            >
-              Work With Me
-            </Button>
+                Work With Me
+              </Button>
+            </div>
           </div>
         )}
       </div>

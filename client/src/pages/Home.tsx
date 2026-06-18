@@ -20,13 +20,9 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   const [heroVisible, setHeroVisible] = useState(false);
-  const [countersReady, setCountersReady] = useState(false);
 
   const handleLoaderComplete = useCallback(() => {
-    // Step 1: fade in the hero page
     setHeroVisible(true);
-    // Step 2: start counters after the hero's 500ms fade-in + a clear pause
-    setTimeout(() => setCountersReady(true), 1000);
   }, []);
 
   return (
@@ -47,7 +43,7 @@ export default function Home() {
         <Navigation />
 
         <main className="relative z-10">
-          <HeroSection loaderDone={countersReady} />
+          <HeroSection />
           <TrustedBySection />
           <AboutSection />
           <VenturesSection />

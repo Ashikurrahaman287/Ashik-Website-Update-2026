@@ -1,166 +1,171 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { useReducedMotion } from 'framer-motion';
+import { ArrowRight, Download } from 'lucide-react';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
 
-function AnimatedCounter({ end, duration = 2000 }: { end: number; duration?: number }) {
+function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: { end: number; duration?: number; prefix?: string; suffix?: string }) {
   const [count, setCount] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(true);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (shouldReduceMotion) {
-      setCount(end);
-      setIsAnimating(false);
-      return;
-    }
-
+    if (!isInView) return;
+    if (shouldReduceMotion) { setCount(end); return; }
     let startTime: number | null = null;
-    const startValue = 0;
-
     const animate = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      
-      setCount(Math.floor(progress * (end - startValue) + startValue));
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setIsAnimating(false);
-      }
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * end));
+      if (progress < 1) requestAnimationFrame(animate);
+      else setCount(end);
     };
-
     requestAnimationFrame(animate);
-  }, [end, duration, shouldReduceMotion]);
+  }, [isInView, end, duration, shouldReduceMotion]);
 
-  return (
-    <span className={`font-mono ${isAnimating && !shouldReduceMotion ? 'animate-glitch-flicker' : ''}`}>
-      {count}
-    </span>
-  );
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
 }
 
-function ParticleEmitter() {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    return null;
-  }
-
-  const particles = Array.from({ length: 15 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 5}s`,
-    duration: `${8 + Math.random() * 4}s`,
-  }));
-
-  return (
-    <div className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none overflow-hidden">
-      {particles.map((particle) => (
-        <div
-          key={particle.id}
-          className="absolute bottom-0 w-1 h-1 bg-primary/30 rounded-full blur-[1px] animate-particle-float"
-          style={{
-            left: particle.left,
-            animationDelay: particle.delay,
-            animationDuration: particle.duration,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
+const stats = [
+  { value: 87, prefix: '$', suffix: 'M+', label: 'Venture Capital Backing' },
+  { value: 15, prefix: '', suffix: 'M+', label: 'Active Users Served' },
+  { value: 220, prefix: '', suffix: 'K+', label: 'Community Members' },
+  { value: 250, prefix: '', suffix: '+', label: 'Strategic Partnerships' },
+  { value: 50, prefix: '', suffix: '+', label: 'Blockchain Projects' },
+  { value: 99, prefix: '', suffix: '.9%', label: 'Platform Uptime' },
+];
 
 export default function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: shouldReduceMotion ? 'auto' : 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: shouldReduceMotion ? 'auto' : 'smooth' });
   };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
       data-testid="section-hero"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-chart-2/10" />
-      
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse" />
+      {/* Background mesh */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A0F1C] via-[#0d1526] to-[#0A0F1C]" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#00D4FF]/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#6366F1]/5 rounded-full blur-[100px]" />
       </div>
-      
-      <ParticleEmitter />
-      
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-pulse-glow">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-medium text-primary">Web3 Visionary</span>
-        </div>
 
-        <div className="relative inline-block mb-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        {/* Badge */}
+        <motion.div
+          className="flex justify-center mb-8"
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00D4FF]/20 bg-[#00D4FF]/5 text-[#00D4FF] text-sm font-medium">
+            <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
+            Available for Strategic Partnerships
+          </div>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.div
+          className="text-center mb-6"
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <h1
-            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-foreground via-primary to-chart-2 bg-clip-text text-transparent animate-gradient"
+            className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight mb-4"
+            style={{ letterSpacing: '-0.02em', lineHeight: '1.1' }}
             data-testid="text-hero-title"
           >
-            Pioneering the Future of FinTech & Web3
+            Ashikur Rahaman
           </h1>
-          <div className="absolute -inset-4 bg-primary/5 blur-2xl -z-10 animate-pulse" />
-        </div>
+          <p className="text-xl md:text-2xl font-medium text-[#00D4FF] mb-2">
+            Founder & CEO of SpudPay
+          </p>
+          <p className="text-base md:text-lg text-[#94A3B8] font-medium">
+            Web3 Executive & Full-Stack Blockchain Engineer
+          </p>
+        </motion.div>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-4" data-testid="text-hero-name">
-          <span className="font-bold text-foreground bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">Ashikur Rahaman</span>
-        </p>
+        {/* Sub-headline */}
+        <motion.p
+          className="text-base md:text-lg text-[#94A3B8] text-center max-w-3xl mx-auto mb-10 leading-relaxed"
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          data-testid="text-hero-subtitle"
+        >
+          Building institutional-grade blockchain infrastructure for global cross-border payments.
+          7+ years scaling Web3 ventures with{' '}
+          <span className="text-white font-semibold">$87M+ backing</span> and partnerships across{' '}
+          <span className="text-white font-semibold">10+ tier-1 exchanges</span>.
+        </motion.p>
 
-        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-          Business Entrepreneur | Blockchain Developer | Building Tomorrow's Decentralized Economy
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        {/* CTAs */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <Button
             size="lg"
-            className="text-base font-medium group hover-glow"
-            onClick={() => scrollToSection('#experience')}
-            data-testid="button-view-work"
+            className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#0A0F1C] font-semibold text-base px-8 hover:scale-[1.02] transition-all shadow-lg shadow-[#00D4FF]/20"
+            onClick={() => scrollToSection('#contact')}
+            data-testid="button-contact"
           >
-            View My Work
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Work With Me
+            <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="text-base font-medium backdrop-blur-sm hover-glow"
-            onClick={() => scrollToSection('#contact')}
-            data-testid="button-get-in-touch"
+            className="border-[#1F2937] text-white hover:border-[#00D4FF]/40 hover:bg-[#00D4FF]/5 text-base px-8 hover:scale-[1.02] transition-all"
+            onClick={() => scrollToSection('#ventures')}
+            data-testid="button-view-projects"
           >
-            Get In Touch
+            View Projects
           </Button>
-        </div>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-[#1F2937] text-[#94A3B8] hover:border-[#6366F1]/40 hover:bg-[#6366F1]/5 text-base px-8 hover:scale-[1.02] transition-all"
+            asChild
+            data-testid="button-resume"
+          >
+            <a href="/resume.pdf" download>
+              <Download className="mr-2 w-4 h-4" />
+              Resume
+            </a>
+          </Button>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {[
-            { value: 10, suffix: '+', label: 'Years of Experience' },
-            { value: 115, prefix: '$', suffix: 'M+', label: 'Venture Capital Backing' },
-            { value: 20, suffix: 'M+', label: 'Active Users Served' },
-          ].map((stat, index) => (
+        {/* Power Stats */}
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+        >
+          {stats.map((stat, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-card-border hover-elevate"
+              className="text-center p-5 rounded-2xl bg-[#111827] border border-[#1F2937] hover:border-[#00D4FF]/30 transition-all group"
               data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                {stat.prefix}
-                <AnimatedCounter end={stat.value} />
-                {stat.suffix}
+              <div className="text-3xl md:text-4xl font-bold text-[#00D4FF] mb-1 group-hover:text-white transition-colors" style={{ letterSpacing: '-0.02em' }}>
+                <AnimatedCounter end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-xs text-[#64748B] font-medium leading-tight">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

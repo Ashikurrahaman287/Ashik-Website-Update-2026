@@ -1,25 +1,40 @@
-import { Card } from '@/components/ui/card';
-import { CheckCircle2 } from 'lucide-react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
+import { CheckCircle2 } from 'lucide-react';
 
 const experiences = [
   {
-    company: 'Ascendex Exchange',
+    company: 'SpudPay',
+    role: 'Founder & CEO',
+    period: '2025 – Present',
+    tag: 'Current',
+    color: '#00D4FF',
+    achievements: [
+      'Building institutional-grade blockchain infrastructure for global cross-border payments',
+      'Leading product architecture for a blockchain-based Mobile Financial Service (MFS)',
+      'Developing C2C, B2C, and B2B transaction protocols with crypto gateway integration',
+      'Overseeing full-stack engineering, partnerships, and fundraising strategy',
+    ],
+  },
+  {
+    company: 'AscendEx Exchange',
     role: 'Business Executive',
-    period: 'Aug 2025 - Apr 2026',
+    period: 'Aug 2025 – Apr 2026',
+    tag: 'Exchange',
+    color: '#6366F1',
     achievements: [
       'Developed strategic partnerships with crypto projects for exchange listings',
       'Managed outreach to new blockchain startups and token teams',
       'Conducted market research to identify potential listing candidates',
-      'Coordinated with marketing and listing teams to onboard new projects',
       'Generated new business opportunities and partnership leads in the Web3 ecosystem',
     ],
   },
   {
     company: 'Tapbit Exchange',
     role: 'Community & Business Development Manager',
-    period: 'Jun 2023 - Aug 2025',
+    period: 'Jun 2023 – Aug 2025',
+    tag: 'Exchange',
+    color: '#6366F1',
     achievements: [
       'Managed global crypto communities with 220K+ users across Telegram, Discord, and Twitter',
       'Built strategic partnerships with blockchain founders, contributing to listing pipeline growth',
@@ -30,7 +45,9 @@ const experiences = [
   {
     company: 'Hotbit Exchange',
     role: 'Customer Support Manager',
-    period: 'Apr 2019 - May 2023',
+    period: 'Apr 2019 – May 2023',
+    tag: 'Exchange',
+    color: '#6366F1',
     achievements: [
       'Led customer support operations for global crypto exchange users',
       'Resolved complex trading, deposit, and withdrawal issues',
@@ -38,104 +55,121 @@ const experiences = [
       'Maintained high customer satisfaction through fast issue resolution',
     ],
   },
+  {
+    company: 'AGT Venture',
+    role: 'Board Member',
+    period: '2022 – Present',
+    tag: 'Board',
+    color: '#22C55E',
+    achievements: [
+      'Serving on the board of AGT — Ash Group of Technology, backed by $115.1M from Zhou Group',
+      'Advising on strategic direction, technology partnerships, and investment decisions',
+      'Supporting cross-sector technology innovation and governance',
+    ],
+  },
+  {
+    company: 'Arcane Group',
+    role: 'Advisor',
+    period: '2025 – Present',
+    tag: 'Advisory',
+    color: '#94A3B8',
+    achievements: [
+      'Advising an innovative investment firm focused on sustainable growth and natural living ventures',
+      'Providing Web3 and blockchain product strategy guidance',
+      'Supporting portfolio companies on go-to-market and partnership development',
+    ],
+  },
 ];
 
+const tagColors: Record<string, string> = {
+  Current: 'bg-[#00D4FF]/10 text-[#00D4FF] border-[#00D4FF]/20',
+  Exchange: 'bg-[#6366F1]/10 text-[#6366F1] border-[#6366F1]/20',
+  Board: 'bg-[#22C55E]/10 text-[#22C55E] border-[#22C55E]/20',
+  Advisory: 'bg-[#94A3B8]/10 text-[#94A3B8] border-[#94A3B8]/20',
+};
+
 function TimelineItem({ exp, index }: { exp: typeof experiences[0]; index: number }) {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { once: true, margin: "-50px" });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-60px' });
   const shouldReduceMotion = useReducedMotion();
-  
-  const isLeft = index % 2 === 0;
-  
+
   return (
     <motion.div
-      ref={cardRef}
-      className={`flex items-center gap-8 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col`}
+      ref={ref}
+      className="relative pl-8 pb-12 last:pb-0"
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -20 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
       data-testid={`timeline-item-${index}`}
     >
-      <motion.div
-        className="flex-1 w-full"
-        initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: isLeft ? -50 : 50 }}
-        animate={shouldReduceMotion ? { opacity: 1, x: 0 } : (isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isLeft ? -50 : 50 })}
-        transition={shouldReduceMotion ? { duration: 0 } : { 
-          duration: 0.6, 
-          delay: index * 0.15,
-          type: "spring",
-          bounce: 0.3
-        }}
-      >
-        <Card className="p-6 md:p-8 bg-card/50 backdrop-blur-sm border-card-border hover-elevate relative overflow-visible">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
-          
-          <div className="relative">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-foreground mb-1">{exp.company}</h3>
-                <p className="text-base text-primary font-semibold">{exp.role}</p>
-              </div>
-              <span className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full w-fit">
-                {exp.period}
-              </span>
-            </div>
+      {/* Timeline dot */}
+      <div
+        className="absolute left-0 top-1 w-3 h-3 rounded-full border-2 border-[#0A0F1C]"
+        style={{ backgroundColor: exp.color, boxShadow: `0 0 8px ${exp.color}40` }}
+      />
+      {/* Timeline line */}
+      {index < experiences.length - 1 && (
+        <div className="absolute left-[5px] top-5 bottom-0 w-px bg-[#1F2937]" />
+      )}
 
-            <ul className="space-y-2">
-              {exp.achievements.map((achievement, achIndex) => (
-                <motion.li 
-                  key={achIndex} 
-                  className="flex gap-2"
-                  initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                  animate={shouldReduceMotion ? { opacity: 1, y: 0 } : (isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 })}
-                  transition={shouldReduceMotion ? { duration: 0 } : { 
-                    duration: 0.4, 
-                    delay: (index * 0.15) + 0.4 + (achIndex * 0.1)
-                  }}
-                >
-                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-muted-foreground">{achievement}</span>
-                </motion.li>
-              ))}
-            </ul>
+      <div className="p-6 rounded-2xl bg-[#111827] border border-[#1F2937] hover:border-[#00D4FF]/20 transition-all group">
+        <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+          <div>
+            <h3 className="text-lg font-bold text-white mb-0.5">{exp.company}</h3>
+            <p className="text-sm font-semibold" style={{ color: exp.color }}>{exp.role}</p>
           </div>
-        </Card>
-      </motion.div>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className={`text-xs font-medium px-2.5 py-1 rounded-full border ${tagColors[exp.tag]}`}>
+              {exp.tag}
+            </span>
+            <span className="text-xs text-[#64748B] bg-[#1F2937] px-3 py-1 rounded-full">
+              {exp.period}
+            </span>
+          </div>
+        </div>
 
-      <div className="hidden md:flex relative z-10">
-        <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg" />
+        <ul className="space-y-1.5">
+          {exp.achievements.map((item, i) => (
+            <li key={i} className="flex gap-2 items-start">
+              <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: exp.color }} />
+              <span className="text-sm text-[#94A3B8]">{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <div className="flex-1 hidden md:block" />
     </motion.div>
   );
 }
 
 export default function ExperienceTimeline() {
-  const timelineRef = useRef(null);
-  const isTimelineInView = useInView(timelineRef, { once: true, margin: "-100px" });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="experience" className="py-24 px-6 bg-accent/20" data-testid="section-experience">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-          Professional Journey
-        </h2>
-        
-        <div className="h-1 w-24 bg-gradient-to-r from-primary to-chart-2 mx-auto mb-16 rounded-full" />
+    <section id="experience" className="py-24 px-6" data-testid="section-experience">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          ref={ref}
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-[#00D4FF] text-sm font-semibold uppercase tracking-widest mb-3">Career</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            Track Record
+          </h2>
+          <div className="w-16 h-0.5 bg-[#00D4FF] mx-auto mb-4" />
+          <p className="text-[#94A3B8] text-lg max-w-2xl mx-auto">
+            7+ years of progressive leadership across top-tier exchanges, founding ventures, and advisory roles.
+          </p>
+        </motion.div>
 
-        <div className="relative" ref={timelineRef}>
-          <motion.div 
-            className="absolute left-1/2 top-0 w-0.5 bg-gradient-to-b from-primary to-chart-2 origin-top hidden md:block"
-            initial={shouldReduceMotion ? { height: "100%" } : { height: 0 }}
-            animate={shouldReduceMotion ? { height: "100%" } : (isTimelineInView ? { height: "100%" } : { height: 0 })}
-            transition={shouldReduceMotion ? { duration: 0 } : { duration: 1.5, ease: "easeOut" }}
-            style={{ transform: 'translateX(-50%)' }}
-          />
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <TimelineItem key={index} exp={exp} index={index} />
-            ))}
-          </div>
+        <div>
+          {experiences.map((exp, index) => (
+            <TimelineItem key={index} exp={exp} index={index} />
+          ))}
         </div>
       </div>
     </section>

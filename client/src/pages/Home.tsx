@@ -43,7 +43,7 @@ export default function Home() {
         <Navigation />
 
         <main className="relative z-10">
-          <HeroSection />
+          <HeroSection loaderDone={loaderDone} />
           <TrustedBySection />
           <AboutSection />
           <VenturesSection />

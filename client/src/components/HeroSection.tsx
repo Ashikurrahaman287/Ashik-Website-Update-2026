@@ -1,42 +1,74 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
-function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: { end: number; duration?: number; prefix?: string; suffix?: string }) {
+interface CounterProps {
+  end: number;
+  prefix?: string;
+  suffix?: string;
+  duration?: number;
+  delay?: number;
+  started: boolean;
+}
+
+function AnimatedCounter({ end, prefix = '', suffix = '', duration = 1800, delay = 0, started }: CounterProps) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const [done, setDone] = useState(false);
+  const rafRef = useRef<number>(0);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (!isInView) return;
-    if (shouldReduceMotion) { setCount(end); return; }
-    let startTime: number | null = null;
-    const animate = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * end));
-      if (progress < 1) requestAnimationFrame(animate);
-      else setCount(end);
-    };
-    requestAnimationFrame(animate);
-  }, [isInView, end, duration, shouldReduceMotion]);
+    if (!started) return;
+    if (shouldReduceMotion) { setCount(end); setDone(true); return; }
 
-  return <span ref={ref}>{prefix}{count}{suffix}</span>;
+    const timeoutId = setTimeout(() => {
+      let startTime: number | null = null;
+
+      const tick = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        // Ease-out cubic for natural deceleration
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.round(eased * end));
+        if (progress < 1) {
+          rafRef.current = requestAnimationFrame(tick);
+        } else {
+          setCount(end);
+          setDone(true);
+        }
+      };
+
+      rafRef.current = requestAnimationFrame(tick);
+    }, delay);
+
+    return () => {
+      clearTimeout(timeoutId);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, [started, end, duration, delay, shouldReduceMotion]);
+
+  return (
+    <span className={done ? 'animate-stat-done' : ''}>
+      {prefix}{count}{suffix}
+    </span>
+  );
 }
 
 const stats = [
-  { value: 87, prefix: '$', suffix: 'M+', label: 'Venture Capital Backing' },
-  { value: 15, prefix: '', suffix: 'M+', label: 'Active Users Served' },
-  { value: 220, prefix: '', suffix: 'K+', label: 'Community Members' },
-  { value: 250, prefix: '', suffix: '+', label: 'Strategic Partnerships' },
-  { value: 50, prefix: '', suffix: '+', label: 'Blockchain Projects' },
-  { value: 99, prefix: '', suffix: '.9%', label: 'Platform Uptime' },
+  { value: 87,  prefix: '$', suffix: 'M+',  label: 'Venture Capital Backing',  delay: 0 },
+  { value: 15,  prefix: '',  suffix: 'M+',  label: 'Active Users Served',       delay: 120 },
+  { value: 220, prefix: '',  suffix: 'K+',  label: 'Community Members',         delay: 240 },
+  { value: 250, prefix: '',  suffix: '+',   label: 'Strategic Partnerships',    delay: 360 },
+  { value: 50,  prefix: '',  suffix: '+',   label: 'Blockchain Projects',       delay: 480 },
+  { value: 99,  prefix: '',  suffix: '.9%', label: 'Platform Uptime',           delay: 600 },
 ];
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  loaderDone?: boolean;
+}
+
+export default function HeroSection({ loaderDone = false }: HeroSectionProps) {
   const shouldReduceMotion = useReducedMotion();
 
   const scrollToSection = (href: string) => {
@@ -142,22 +174,46 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           {stats.map((stat, index) => (
-            <div
+            <motion.div
               key={index}
-              className="text-center p-3 sm:p-4 md:p-5 rounded-xl sm:rounded-2xl bg-[#111827] border border-[#1F2937] hover:border-[#00D4FF]/30 transition-all group"
+              className="stat-card text-center p-3 sm:p-4 md:p-5 rounded-xl sm:rounded-2xl bg-[#111827] border border-[#1F2937] transition-all group"
+              whileHover={shouldReduceMotion ? {} : {
+                borderColor: 'rgba(0,212,255,0.35)',
+                boxShadow: '0 0 18px rgba(0,212,255,0.12)',
+                transition: { duration: 0.2 },
+              }}
               data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
             >
               <div
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#00D4FF] mb-0.5 sm:mb-1 group-hover:text-white transition-colors"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#00D4FF] mb-0.5 sm:mb-1 tabular-nums group-hover:text-white transition-colors"
                 style={{ letterSpacing: '-0.02em' }}
               >
-                <AnimatedCounter end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+                <AnimatedCounter
+                  end={stat.value}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                  delay={stat.delay}
+                  started={loaderDone}
+                />
               </div>
-              <div className="text-[10px] sm:text-xs text-[#64748B] font-medium leading-tight">{stat.label}</div>
-            </div>
+              <div className="text-[10px] sm:text-xs text-[#64748B] font-medium leading-tight">
+                {stat.label}
+              </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
+
+      <style>{`
+        @keyframes stat-glow {
+          0%   { text-shadow: 0 0 0px rgba(0,212,255,0); }
+          40%  { text-shadow: 0 0 14px rgba(0,212,255,0.8); }
+          100% { text-shadow: 0 0 0px rgba(0,212,255,0); }
+        }
+        .animate-stat-done {
+          animation: stat-glow 0.9s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }

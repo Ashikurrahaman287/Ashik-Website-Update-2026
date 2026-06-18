@@ -1,0 +1,57 @@
+You are a senior frontend engineer with 12+ years of experience building institutional-grade Web3 founder websites. Design and code a premium, professional, single-page portfolio for Ashikur Rahaman that feels hand-crafted, not AI-generated.
+
+**Core Requirements:**
+
+1. **Opening / Loader Animation (First Impression)**
+   - Create a sophisticated 1.8–2.5 second full-screen opening animation when the website loads.
+   - Theme: Elegant blockchain-inspired animation (floating subtle hexagonal nodes, gentle blockchain links forming, soft glowing particles, and a clean "connecting blocks" effect).
+   - Must feel premium and professional — NOT cartoonish or over-the-top.
+   - After animation completes, smoothly fade into the Hero section.
+   - Fully mobile-friendly and performant.
+
+2. **Professional Animations (Mobile-First & Smooth)**
+   - Use Framer Motion for all animations.
+   - All animations must be subtle, elegant, and performant on mobile devices (60fps, no jank).
+   - Scroll-triggered animations with proper stagger and easing.
+   - Examples:
+     - Stats numbers: Count-up animation + very soft glow on reveal
+     - Cards: Gentle fade-up + slight scale on scroll (max 1.02 scale)
+     - Hero elements: Staggered entrance from top
+     - Section headers: Underline or accent line that draws in
+     - Hover states: Very subtle lift and soft cyan glow
+   - Reduce animation intensity on mobile (prefers-reduced-motion support)
+
+3. **SEO & Technical Head Requirements**
+   - Proper <head> with SEO-optimized elements:
+     - Title: Ashikur Rahaman | Web3 Founder & CEO of SpudPay | Blockchain Executive
+     - Meta description: Ashikur Rahaman is a Web3 founder and full-stack blockchain engineer building SpudPay — institutional-grade cross-border payment infrastructure. 7+ years experience, $87M+ backing, and partnerships with 10+ tier-1 exchanges.
+     - Open Graph tags (og:title, og:description, og:image, og:url)
+     - Twitter Card tags
+     - JSON-LD structured data (Person schema)
+     - Canonical URL
+     - Proper heading hierarchy (only one <h1>)
+
+4. **Design Direction (Premium Institutional)**
+   - Deep navy-black background (#0A0F1C)
+   - Electric cyan accent (#00D4FF) with very soft subtle glow
+   - Generous whitespace, clean typography (Inter font)
+   - High-end, hand-crafted feel — avoid generic AI patterns
+
+**Full Structure to Follow:**
+1. Opening Blockchain Animation
+2. Hero Section
+3. Trust Bar (exchanges)
+4. Power Stats Section
+5. Current Focus – SpudPay
+6. Executive Track Record
+7. Technical Expertise & Selected Projects
+8. Awards & Testimonials
+9. Contact Footer
+
+**Content:** Use all the latest updated information (SpudPay focus, $87M+ backing, $115.1 million Zhou Group, Ashik@Spudblocks.com, etc.) from previous specifications.
+
+**Important Rules:**
+- Make the entire site feel premium and human-crafted
+- Excellent mobile experience (test mentally on phone sizes)
+- No cheap effects or excessive animations
+- Smooth performance (use proper viewport, lazy loading where needed)

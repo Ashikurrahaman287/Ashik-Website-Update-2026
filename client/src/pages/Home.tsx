@@ -19,10 +19,14 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
-  const [loaderDone, setLoaderDone] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [countersReady, setCountersReady] = useState(false);
 
   const handleLoaderComplete = useCallback(() => {
-    setLoaderDone(true);
+    // Step 1: fade in the hero page
+    setHeroVisible(true);
+    // Step 2: start counters only after the hero's 500ms fade-in finishes (+100ms buffer)
+    setTimeout(() => setCountersReady(true), 600);
   }, []);
 
   return (
@@ -34,7 +38,7 @@ export default function Home() {
       <div
         className="relative min-h-screen overflow-hidden"
         style={{
-          opacity: loaderDone ? 1 : 0,
+          opacity: heroVisible ? 1 : 0,
           transition: 'opacity 0.5s ease-in-out',
         }}
       >
@@ -43,7 +47,7 @@ export default function Home() {
         <Navigation />
 
         <main className="relative z-10">
-          <HeroSection loaderDone={loaderDone} />
+          <HeroSection loaderDone={countersReady} />
           <TrustedBySection />
           <AboutSection />
           <VenturesSection />

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 function AnimatedCounter({ end, duration = 2000, prefix = '', suffix = '' }: { end: number; duration?: number; prefix?: string; suffix?: string }) {
@@ -131,18 +131,6 @@ export default function HeroSection() {
             data-testid="button-view-projects"
           >
             View Projects
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="w-full sm:w-auto border-[#1F2937] text-[#94A3B8] hover:border-[#6366F1]/40 hover:bg-[#6366F1]/5 text-sm sm:text-base px-6 sm:px-8 hover:scale-[1.02] transition-all"
-            asChild
-            data-testid="button-resume"
-          >
-            <a href="/resume.pdf" download>
-              <Download className="mr-2 w-4 h-4" />
-              Resume
-            </a>
           </Button>
         </motion.div>
 

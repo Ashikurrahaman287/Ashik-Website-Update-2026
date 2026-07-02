@@ -156,7 +156,7 @@ export default function HeroSection() {
             onClick={() => scrollToSection('#contact')}
             data-testid="button-contact"
           >
-            Work With Me
+            Hire Me 
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button

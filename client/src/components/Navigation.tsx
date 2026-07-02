@@ -101,7 +101,7 @@ export default function Navigation() {
               onClick={() => scrollToSection('#contact')}
               data-testid="button-nav-cta"
             >
-              Work With Me
+              Hire Me 
             </Button>
           </div>
 
@@ -143,7 +143,7 @@ export default function Navigation() {
                 className="w-full bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#0A0F1C] font-semibold"
                 onClick={() => scrollToSection('#contact')}
               >
-                Work With Me
+                Hire Me 
               </Button>
             </div>
           </div>

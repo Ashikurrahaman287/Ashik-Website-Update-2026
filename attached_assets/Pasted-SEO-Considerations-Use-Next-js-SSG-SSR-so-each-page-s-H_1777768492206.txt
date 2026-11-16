@@ -1,0 +1,45 @@
+SEO Considerations:
+
+Use Next.js SSG or SSR so each page includes real HTML content and metadata.
+Add a unique title and meta description for each page.
+Add Open Graph and Twitter Card tags in the head.
+Use a canonical link for the homepage.
+
+Example meta tags:
+
+<meta property="og:title" content="Ashikur Rahaman | Web3 BD Leader, Founder & Blockchain Product Builder">
+<meta property="og:description" content="Ashikur Rahaman — Founder of SpudBlocks & Saga Lab, focused on blockchain, fintech, AI SaaS, and Web3 business development.">
+<meta property="og:image" content="https://ashik.spudblocks.com/images/og-profile.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ashik.spudblocks.com/">
+
+Structured Data (JSON-LD):
+
+Add Person schema for Ashikur and Organization schema for SpudBlocks and Saga Lab.
+This helps search engines better understand the brand and increases the chance of rich results.
+
+Analytics & Tracking:
+
+Add GA4 or a lightweight tracker such as Plausible or Fathom.
+Track clicks on Resume, Contact, and Case Study buttons.
+
+Contact Form Handling:
+
+Use a serverless API route or form service to handle submissions.
+Return clear success and error states.
+Track submissions as analytics events.
+
+Resume Download:
+
+Place resume.pdf in /public and link to it directly.
+Make sure the PDF is searchable and text-based.
+
+File Names & SEO:
+
+Use descriptive image names and alt text.
+
+CI/CD & Monitoring:
+
+Use automatic deploys on push to main.
+Monitor indexing and performance after launch.

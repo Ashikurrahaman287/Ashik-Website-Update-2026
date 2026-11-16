@@ -1,0 +1,37 @@
+Contact / Call to Action:
+
+Purpose: Final invitation to engage.
+Content Goals: Brief prompt, contact buttons, and a confident close.
+Headline: “Let’s Build the Future of Web3”
+Copy: “Whether you’re a startup, investor, or fellow innovator, I’m open to partnerships, advisory work, and new product opportunities.”
+CTAs: Email link, “Connect on LinkedIn”, “Telegram”, and “Download Resume”.
+Microcopy Example: “Email me at ashik@spudblocks.com or connect via LinkedIn / Telegram / X.”
+
+Footer:
+
+Purpose: Site map, legal info, and secondary links.
+Content Goals: Repeat key navigation links, copyright notice, social icons, and a short brand line.
+Footer Copy: “© 2026 Ashikur Rahaman. Site by Ashikur Rahaman.”
+
+2. Copywriting Prompts (for Every Component)
+
+Hero Component:
+Prompt: Introduce Ashikur with name and primary titles. Mention his unique blend of business leadership and technical expertise. Include 2–3 key roles (SpudBlocks, Saga Lab, AscendEX). State a one-line mission or value proposition. Provide two CTA button texts: one primary and one secondary.
+
+About Section:
+Prompt: Describe Ashikur’s professional background and philosophy. Include his current positions, years of experience, industry focus, and entrepreneurial story. Add 2–3 quick facts. Keep the tone professional but personal.
+
+Experience Timeline:
+Prompt: List each major role chronologically with dates. For each entry include company, title, duration, and a short description of responsibilities or achievements. Keep each item brief.
+
+Business Impact Section:
+Prompt: Start each bullet with a strong verb or icon and quantify results if possible. Connect actions to business benefit. Use metrics where available; otherwise describe qualitative impact.
+
+Services Offered:
+Prompt: For each service category, include the name and one-sentence description. Use business language and keep each service focused on a clear outcome.
+
+Featured Projects (Card Content):
+Prompt: For each project card, include project name, short subtitle, brief problem/solution context, key features if needed, tech stack if useful, and a CTA. Highlight business value.
+
+Case Study (Detailed Page):
+Prompt: For each case study, describe the problem, solution, features, tech stack, business value, and a final CTA. Make it storytelling and results-oriented, with Ashikur’s role clearly described.

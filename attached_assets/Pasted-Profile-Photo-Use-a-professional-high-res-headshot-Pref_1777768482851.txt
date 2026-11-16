@@ -1,0 +1,54 @@
+Profile Photo:
+
+Use a professional, high-res headshot with a clear face and a confident expression.
+Prefer a techy background such as an office, studio, or abstract matrix pattern.
+If no photo is available, use a refined AI-style illustration that still feels personal.
+
+Logo / Brand Assets:
+
+If SpudBlocks and Saga Lab logos exist, include them.
+If not, use clean wordmarks with a modern tech feel.
+Use a high-resolution SpudBlocks icon or mascot if available.
+For Ashikur’s personal brand, consider a simple AR monogram or blockchain-node symbol as a favicon.
+
+Imagery:
+
+Use business and technology visuals: founders, offices, charts, product screenshots, and subtle crypto graphics.
+Avoid generic stock images when possible.
+Use SVG icons for services, achievements, and navigation cues.
+
+Accessibility Notes:
+
+Ensure strong text/background contrast and verify it with a contrast checker.
+Every image needs descriptive alt text.
+Use semantic HTML with a single h1, clear section structure, and keyboard-friendly controls.
+Do not rely on color alone to communicate meaning.
+Make sure interactive elements have visible focus states.
+
+The design should feel premium, modern, and tech-savvy with clear hierarchy, generous whitespace, and smooth purposeful motion.
+
+4. Developer Technical Specifications
+
+Tech Stack:
+
+Frontend: Next.js (React) for server-side rendering and static generation.
+Styling: Tailwind CSS or styled-components, with Tailwind preferred for speed and consistency.
+State/Interactions: Keep interactions minimal; use React only where needed.
+Backend/API: Use a serverless route or form service for contact submissions.
+Hosting/CD: Deploy on Vercel or Netlify with automatic Git-based deployments.
+
+File Structure:
+
+/public           // static assets
+/pages            // app pages
+/components       // reusable UI components
+/styles           // global styles and config
+/data             // optional content data
+
+Performance Optimizations:
+
+Use Next.js Image for optimized responsive images.
+Preload critical assets.
+Minify output and defer non-critical JS.
+Use CDN caching and keep dependencies lean.
+Aim for strong Core Web Vitals: fast LCP, low CLS, minimal JS.

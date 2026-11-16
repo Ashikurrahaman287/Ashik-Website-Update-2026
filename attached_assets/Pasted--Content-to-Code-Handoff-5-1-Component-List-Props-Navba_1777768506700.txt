@@ -1,0 +1,121 @@
+. Content-to-Code Handoff
+5.1 Component List & Props
+Navbar: props: menuLinks (array of { name, href }), logo.
+Hero: props: title, subtitle, backgroundImage, ctaButtons (array of { text, href }).
+About: props: profileImage, introText (string/JSX), statItems (array of { label, value }).
+Timeline: props: items (array of { date, title, company, description, logoSrc }).
+BusinessImpact: props: impactItems (array of { icon, title, description }).
+ServiceCard: props: icon, serviceName, description.
+ProjectsGrid: contains multiple ProjectCard.
+ProjectCard: props: name, tagline, shortDesc, features (array), techStack (array), caseStudyUrl.
+CaseStudySection: props: projectName, problem, solution, features, techStack, value, ctaText, ctaLink.
+Testimonials: props: quotes (array of { text, author }), logos (array of logo image URLs).
+ContactForm: controlled component with fields name, email, message.
+Footer: props: links (array), socialLinks (array of icons/URLs).
+
+5.2 Example Code Snippets
+Hero Component (React/Next.js)
+jsx
+Copy
+// components/Hero.jsx
+export default function Hero({ title, subtitle, ctaButtons }) {
+  return (
+    <section className="relative flex flex-col md:flex-row items-center h-screen bg-darknavy text-white px-8 md:px-16">
+      <div className="flex-1 space-y-6">
+        <h1 className="text-5xl md:text-6xl font-bold">{title}</h1>
+        <p className="text-lg md:text-xl">{subtitle}</p>
+        <div className="space-x-4">
+          {ctaButtons.map(btn => (
+            <a
+              key={btn.text}
+              href={btn.href}
+              className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition"
+            >
+              {btn.text}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="hidden md:block flex-1">
+        <img src="/images/ashik-profile.jpg" alt="Ashikur Rahaman" className="rounded-full shadow-lg" />
+      </div>
+    </section>
+  )
+}
+Usage example:
+
+jsx
+Copy
+<Hero
+  title="Ashikur Rahaman – Web3 Business Development Leader"
+  subtitle="I help crypto startups and fintech companies grow with strategic partnerships and innovative blockchain/AI products."
+  ctaButtons={[
+    { text: 'Contact Me', href: '#contact' },
+    { text: 'View Projects', href: '#projects' },
+  ]}
+/>
+ProjectCard Component
+jsx
+Copy
+// components/ProjectCard.jsx
+export default function ProjectCard({ name, tagline, features, techStack, imageUrl, caseStudyUrl }) {
+  return (
+    <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 shadow-md flex flex-col">
+      <img src={imageUrl} alt={`${name} screenshot`} className="w-full rounded-md mb-4" />
+      <h3 className="text-xl font-semibold text-white">{name}</h3>
+      <p className="text-gray-300 mb-4">{tagline}</p>
+      <ul className="list-disc list-inside text-gray-400 flex-1">
+        {features.map((feat, i) => <li key={i}>{feat}</li>)}
+      </ul>
+      <div className="mt-4">
+        <p className="text-sm text-gray-500">Tech: {techStack.join(', ')}</p>
+        <a href={caseStudyUrl} className="mt-3 inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg">
+          View Case Study
+        </a>
+      </div>
+    </div>
+  )
+}
+Props example:
+
+jsx
+Copy
+<ProjectCard
+  name="Saga Inventory"
+  tagline="Full-stack inventory & invoicing SaaS for SMBs."
+  imageUrl="/images/saga-inventory.png"
+  features={[
+    "Multi-warehouse stock tracking",
+    "Sales & expense dashboards",
+    "Invoice generation & printing",
+    "User roles & permissions"
+  ]}
+  techStack={["React", "Node.js", "PostgreSQL", "Electron"]}
+  caseStudyUrl="/case-studies/saga-inventory"
+/>
+Timeline Component
+jsx
+Copy
+// components/Timeline.jsx
+export default function Timeline({ items }) {
+  return (
+    <section id="experience" className="py-16 bg-darknavy text-white">
+      <h2 className="text-3xl font-bold mb-8">Experience</h2>
+      <div className="space-y-8">
+        {items.map(item => (
+          <div key={item.date} className="flex items-start space-x-4">
+            <div className="w-20 text-right pr-4">
+              <span className="text-sm text-gray-400">{item.date}</span>
+            </div>
+            <div className="flex-1">
+              <div className="mb-1">
+                <span className="font-semibold">{item.role}</span> at <span className="font-bold">{item.company}</span>
+              </div>
+              <p className="text-gray-300">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}

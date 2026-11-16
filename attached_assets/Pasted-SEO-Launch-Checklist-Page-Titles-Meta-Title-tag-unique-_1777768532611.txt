@@ -1,0 +1,81 @@
+SEO & Launch Checklist
+
+Page Titles & Meta:
+
+Use a unique title tag and meta description for every page.
+Home: Ashikur Rahaman | Web3 BD Leader, Founder & Blockchain Product Builder
+About: About | Ashikur Rahaman – Web3 & Fintech Entrepreneur
+Projects: Projects | Ashikur Rahaman – Blockchain & AI Products
+Services: Services | Ashikur Rahaman – Web3 Growth & Product Services
+Contact: Contact | Ashikur Rahaman – Let’s Build the Future of Web3
+
+Meta descriptions should stay concise and keyword-rich.
+Example: “Portfolio of Ashikur Rahaman, Web3 business development executive and founder of SpudBlocks & Saga Lab, focused on blockchain, fintech, AI SaaS, and strategic partnerships.”
+
+Open Graph / Twitter Cards:
+
+Use matching og:title and twitter:title for each page.
+Use matching og:description and twitter:description.
+Add og:image and twitter:image with a 1200x630 sharing image.
+Set og:url to the canonical page URL.
+Use og:type="website" and twitter:card="summary_large_image".
+
+robots.txt & Sitemap:
+
+Allow crawling in robots.txt.
+Generate a sitemap.xml covering all public pages.
+Submit the sitemap to Google Search Console.
+
+Canonicalization:
+
+Add a canonical link on each page to the main URL.
+
+Analytics & Verification:
+
+Add GA4 or a privacy-friendly analytics script.
+Add Google Site Verification if needed.
+Track Resume, Contact, and Case Study clicks.
+
+Structured Data Testing:
+
+Validate JSON-LD with Google Rich Results Test or Schema Markup Validator.
+Fix any schema errors before launch.
+
+Accessibility Testing:
+
+Check contrast, alt text, keyboard navigation, and ARIA with Lighthouse or axe.
+Ensure every interactive element is keyboard reachable.
+
+Performance Testing:
+
+Run Lighthouse on mobile and desktop.
+Aim for strong LCP, low CLS, and minimal JS.
+Optimize the hero image with Next Image and set explicit dimensions.
+
+Cross-Browser:
+
+Test in Chrome, Firefox, Safari, and Edge.
+Check mobile layouts and interactions.
+
+Final Content Review:
+
+Proofread all copy.
+Confirm links, resume download, and contact forms work.
+
+Launch:
+
+Deploy to the production domain and verify the live site.
+
+8. Assets & Final Copy Blocks
+
+Assets List:
+
+Profile Photo: High-res headshot with a professional tech background.
+Hero Background / Illustration: Abstract blockchain or AI-themed visual.
+Project Images / Screenshots: Saga Inventory, Spud Finance Tracker, SpudPay mockups, Outreach Bot, and related product shots.
+Company Logos: AscendEX, Tapbit, Hotbit, COPX, AGT Venture.
+Service Icons: Handshake for BD, computer for development, chart for analytics, mobile for fintech, robot for AI/bots.
+Social Icons: LinkedIn, Twitter, Telegram, GitHub.
+Resume PDF: polished, current resume.
+Brand Logos: SpudBlocks and Saga Lab.
+Favicon: AR monogram or SpudBlocks icon.

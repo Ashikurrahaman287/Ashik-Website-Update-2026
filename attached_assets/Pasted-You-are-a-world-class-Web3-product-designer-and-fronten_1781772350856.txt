@@ -1,0 +1,132 @@
+You are a world-class Web3 product designer and frontend developer specializing in premium, institutional-grade founder portfolios. Your designs are clean, modern, highly professional, and convey serious credibility.
+
+Redesign a high-end, single-page portfolio website for Ashikur Rahaman that feels like it belongs to a founder raising institutional capital.
+
+**Strict Design Direction:**
+- Premium dark crypto aesthetic
+- Extremely clean, minimalist, and sophisticated
+- High visual hierarchy and excellent scannability
+- Professional and trustworthy (avoid flashy crypto-bro aesthetics)
+- Generous whitespace with strong contrast
+- Subtle, elegant micro-interactions only
+
+### Exact Design System
+
+**Color Palette:**
+- Background: #0A0F1C (deep navy-black)
+- Surface / Cards: #111827 (slightly lighter dark)
+- Primary Accent: #00D4FF (electric cyan)
+- Secondary Accent: #6366F1 (soft indigo)
+- Text Primary: #FFFFFF
+- Text Secondary: #94A3B8
+- Text Muted: #64748B
+- Border: #1F2937
+- Success/Green accent: #22C55E (use sparingly)
+
+**Typography:**
+- Font Family: Inter (or Satoshi as alternative)
+- H1: 64px / 72px line-height, font-weight 700
+- H2: 40px / 48px, font-weight 600
+- H3: 28px / 36px, font-weight 600
+- Body: 18px / 28px line-height, font-weight 400
+- Small text: 14px / 20px
+- Use tight tracking on headlines (-0.02em) and slightly looser on body
+
+**Spacing System (use consistently):**
+- Section padding: py-24 (desktop), py-16 (mobile)
+- Card padding: p-8
+- Gap between elements: 24px–48px
+- Use 8px grid system
+
+**Layout & Grid:**
+- Maximum content width: 1280px (centered)
+- Use generous side margins on desktop
+- Mobile-first approach with breakpoints at 640px, 1024px, and 1280px
+- Hero and stats sections should feel expansive
+
+### Detailed Component Specifications
+
+**1. Hero Section:**
+- Full-width with subtle gradient or very light mesh background
+- Large centered or left-aligned headline
+- Sub-headline directly below with good breathing room
+- Two prominent CTAs (primary button in cyan, secondary in outline style)
+- Professional headshot on the right side (or subtle abstract Web3 visual)
+- Very high visual weight on name and role
+
+**2. Trust Bar:**
+- Thin horizontal bar with exchange names or logos
+- Subtle divider lines
+- Centered or justified layout
+- Small text size with good contrast
+
+**3. Power Stats Section:**
+- Use large, bold numbers (minimum 48–64px)
+- Each stat in its own clean card or in a clean 3–6 column grid
+- Very short supporting label below each number
+- Strong visual separation but elegant
+- This section must feel like the strongest credibility moment on the page
+
+**4. Cards (Track Record, Projects, etc.):**
+- Clean rounded corners (12–16px radius)
+- Subtle border (#1F2937)
+- Soft inner shadow or no shadow (keep it minimal)
+- Hover effect: very subtle lift + border color change to accent
+- Consistent icon + title + description structure
+
+**5. Animations & Interactions:**
+- Use subtle Framer Motion style transitions
+- Stats numbers can have a gentle count-up animation on scroll
+- Buttons: scale 1.02 + shadow on hover
+- Cards: very light lift on hover
+- No aggressive animations — keep everything elegant and calm
+
+**6. Overall Visual Hierarchy:**
+- Hero → Trust Bar → Power Stats must be the first three things the user sees
+- Heavy use of whitespace between major sections
+- Clear visual breaks between sections using subtle dividers or spacing
+- All important credibility elements (stats, backing, exchange experience) must be extremely prominent
+
+### Content to Use (Exact & Updated)
+
+**Name & Title:**
+Ashikur Rahaman  
+Founder & CEO of SpudPay | Web3 Executive & Full-Stack Blockchain Engineer
+
+**Hero Sub-headline:**
+Building institutional-grade blockchain infrastructure for global cross-border payments. 7+ years scaling Web3 ventures with $87M+ backing and partnerships across 10+ tier-1 exchanges.
+
+**Power Stats (display prominently):**
+- $87M+ Venture Capital Backing
+- 15M+ Active Users Served
+- 220K+ Community Members Managed
+- 250+ Strategic Partnerships
+- 50+ Blockchain Projects Delivered
+- 99.9% Platform Uptime
+
+**Current Focus:**
+SpudPay — Founder & CEO (2025–Present)
+
+**Track Record (use clean timeline or card layout):**
+- SpudBlocks — Founder & CEO (2018–Present)
+- AscendEx — Business Executive (2025–2026)
+- Tapbit Exchange — Community & BD Manager (2023–2025)
+- Hotbit Exchange — Customer Support Manager (2019–2023)
+- AGT Venture — Board Member (2022–Present) — Backed by $115.1 million investment from Zhou Group
+- Arcane Group — Advisor (2025–Present)
+
+**Technical Skills & Projects:** Include Solidity expert level, selected projects (Copx AI, Goose Finance, Kesef Finance, Joker Manor, PlutusFi, Coinverse), and awards.
+
+**Professional Email:** Use Ashik@Spudblocks.com
+
+**Design Mood Reference:**
+Think of high-end sites like a16z crypto founder pages, Paradigm, or top-tier Web3 founder portfolios — clean, confident, and institutional.
+
+**Technical Requirements:**
+- Build using Next.js 15 + TypeScript + Tailwind CSS + Framer Motion
+- Fully responsive with excellent mobile experience
+- Add proper SEO (title, meta description, Open Graph, JSON-LD)
+- Fast performance and clean code structure
+- Include placeholder for professional headshot
+
+Output the complete, production-ready redesigned website with all sections implemented according to the detailed design system above.

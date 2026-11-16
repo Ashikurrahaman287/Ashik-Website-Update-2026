@@ -1,0 +1,40 @@
+1. Website Structure (Menu & Sections)
+Menu (top navigation): Home, About, Experience, Projects, Services, Case Studies, Contact, (optional Resume). This should be sticky on desktop and mobile.
+
+Home (Hero Section):
+
+Purpose: Introduce Ashikur and his value proposition, and drive action.
+Content Goals: Big headline (name + roles), brief tagline (elevator pitch), hero image or graphic, 2–3 CTA buttons, and quick trust tags.
+Microcopy Example:
+Headline: “I’m Ashikur Rahaman – Web3 BD Leader, Founder & Product Builder.”
+Tagline: “I help crypto startups and fintech teams grow through strategic partnerships, listings, and AI-powered products.”
+CTAs: “Contact Me”, “View Projects”, “Download Resume”.
+Design: Full-screen with dark background and subtle blockchain-themed graphics, plus a professional portrait or avatar.
+
+About Section:
+
+Purpose: Summarize Ashikur’s background, mission, and core expertise.
+Content Goals: Two-column or split-layout with an image or visual on one side and concise bio on the other. Highlight current roles and vision. Include 2–3 key stats.
+Microcopy Example:
+Intro Paragraph: “I’m Ashikur Rahaman, a Web3 business development leader and product founder with 10+ years of experience across blockchain, fintech, and AI SaaS. As CEO of SpudBlocks, Founder of Saga Lab, BD Executive at AscendEX, and Advisor at COPX, I build products, partnerships, and growth systems that solve real business problems.”
+Key Stats: “10+ years in tech and business development | Founded SpudBlocks and Saga Lab | Built and advised multiple Web3 and SaaS ventures.”
+
+Experience Timeline:
+
+Purpose: Show Ashikur’s career progression in a clear chronological format.
+Content Goals: List major roles by year or date, include company logos, and keep each item brief with a short achievement line.
+Microcopy Example:
+“2025–Now: Founder & MD, Saga Lab – Building AI-driven SaaS solutions.”
+“2023–Now: BD Executive, AscendEX – Leading exchange partnerships and listings.”
+“2021–2023: Founder & CEO, SpudBlocks – Grew a blockchain fintech agency into an AI/SaaS studio.”
+“2019–2021: Business Dev Lead, Tapbit & Hotbit Exchanges – Secured listings and launched token programs.”
+
+Business Impact (Achievements):
+
+Purpose: Highlight concrete results from Ashikur’s work.
+Content Goals: Use concise, metric-driven bullet points with icons.
+Microcopy Example:
+“🔗 Built partnership pipelines across 10+ global exchanges for crypto startups.”
+“📈 Helped projects grow trading volume by 20–50% through strategic token and partnership launches.”
+“🛠 Led development of Saga Inventory and SpudPay concept work.”
+“🤝 Connected startups with investors, advisors, and technical partners through COPX and AGT networks.”

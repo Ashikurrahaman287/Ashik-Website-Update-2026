@@ -1,0 +1,103 @@
+Items example:
+
+jsx
+Copy
+const timelineItems = [
+  {
+    date: "2025–Present",
+    role: "Founder & MD",
+    company: "Saga Lab",
+    description: "Leading AI-driven SaaS research and development."
+  },
+  {
+    date: "2023–Present",
+    role: "BD Executive",
+    company: "AscendEX",
+    description: "Overseeing exchange partnerships and token listings."
+  },
+  {
+    date: "2021–2023",
+    role: "Founder & CEO",
+    company: "SpudBlocks",
+    description: "Scaled a blockchain/fintech agency, launching new products."
+  },
+  {
+    date: "2019–2021",
+    role: "Business Development Lead",
+    company: "Tapbit & Hotbit",
+    description: "Secured listings and partnership deals for blockchain projects."
+  },
+];
+CaseStudySection Component
+jsx
+Copy
+// components/CaseStudy.jsx
+export default function CaseStudy({ projectName, problem, solution, features, techStack, value }) {
+  return (
+    <article className="py-12 px-6 bg-gray-50 rounded-xl shadow-lg mb-12">
+      <h3 className="text-2xl font-bold mb-2">{projectName}</h3>
+      <p><strong>Problem:</strong> {problem}</p>
+      <p><strong>Solution:</strong> {solution}</p>
+      <ul className="list-disc list-inside mt-4 mb-4">
+        {features.map((f, i) => <li key={i}>{f}</li>)}
+      </ul>
+      <p className="italic text-sm text-gray-700"><strong>Tech Stack:</strong> {techStack.join(', ')}</p>
+      <p className="mt-4"><strong>Business Value:</strong> {value}</p>
+    </article>
+  )
+}
+Usage example:
+
+jsx
+Copy
+<CaseStudy
+  projectName="Saga Inventory"
+  problem="Small businesses struggle with manual stock and sales tracking across multiple stores."
+  solution="A self-hosted inventory management app that automates tracking, invoicing, and reporting."
+  features={[
+    "Real-time stock level alerts",
+    "Barcode scanning and receipts",
+    "Multi-location management",
+    "Daily/weekly sales dashboards"
+  ]}
+  techStack={["React", "Node.js", "PostgreSQL", "Electron"]}
+  value="Cut inventory errors by 60% and doubled order processing speed for a local retailer."
+/>
+Contact Form (Next.js / React)
+jsx
+Copy
+// components/ContactForm.jsx
+import { useState } from 'react';
+export default function ContactForm() {
+  const [status, setStatus] = useState('');
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    });
+    if(res.ok) {
+      setStatus('Message sent! Thank you.');
+      form.reset();
+    } else {
+      setStatus('Sorry, an error occurred.');
+    }
+  };
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div><input type="text" name="name" placeholder="Your Name" required className="w-full p-3 bg-gray-700 text-white rounded" /></div>
+      <div><input type="email" name="email" placeholder="Your Email" required className="w-full p-3 bg-gray-700 text-white rounded" /></div>
+      <div><textarea name="message" placeholder="Your Message" rows="5" required className="w-full p-3 bg-gray-700 text-white rounded"></textarea></div>
+      <div className="text-right">
+        <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded">Send Message</button>
+      </div>
+      {status && <p className="text-gray-300">{status}</p>}
+    </form>
+  )
+}

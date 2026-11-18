@@ -41,7 +41,7 @@ export default function AboutSection() {
               I'm <span className="text-white font-semibold">Ashikur Rahaman</span>, a blockchain engineer and Web3 executive with 7+ years building institutional-grade products and strategic partnerships across global crypto markets.
             </p>
             <p className="text-[#94A3B8] text-lg leading-relaxed mb-6">
-              As <span className="text-[#00D4FF] font-semibold">CEO of Spudblocks</span>, I'm building a cross-border blockchain payment infrastructure designed for real-world adoption. I also serve as CEO of SpudBlocks, Board Member of AGT Venture — backed by <span className="text-white font-semibold">$115.1M from Zhou Group</span> — and Advisor at Arcane Group.
+              As <span className="text-[#00D4FF] font-semibold">Co-Founder of Spudpay</span>, I'm building a cross-border blockchain payment infrastructure designed for real-world adoption. I also serve as CEO of SpudBlocks, Board Member of AGT Venture — backed by <span className="text-white font-semibold">$115.1M from Zhou Group</span> — and Advisor at Arcane Group.
             </p>
             <p className="text-[#94A3B8] text-lg leading-relaxed">
               My expertise spans Solidity smart contracts, DeFi protocols, full-stack dApp development, exchange business development, and community scaling. I've delivered 50+ blockchain projects and helped grow exchange communities to <span className="text-white font-semibold">220K+ members</span>.

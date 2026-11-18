@@ -79,7 +79,7 @@ export default function AboutSection() {
                 className="text-[#00D4FF] font-semibold text-lg hover:underline"
                 data-testid="link-about-email"
               >
-                Ashik@SpudBlocks.com
+               ceo@spudblocks.com
               </a>
             </div>
           </motion.div>

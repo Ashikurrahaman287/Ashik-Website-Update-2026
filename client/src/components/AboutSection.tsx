@@ -3,10 +3,10 @@ import { useRef } from 'react';
 import { Building2, Coins, Code2, Users } from 'lucide-react';
 
 const highlights = [
-  { icon: Building2, label: 'Founder & CEO', value: 'SpudPay', color: 'text-[#00D4FF]' },
+  { icon: Building2, label: 'Co-Founder', value: 'SpudPay', color: 'text-[#00D4FF]' },
   { icon: Coins, label: 'Board Member', value: 'AGT Venture', color: 'text-[#6366F1]' },
   { icon: Code2, label: 'Full-Stack', value: 'Blockchain Engineer', color: 'text-[#22C55E]' },
-  { icon: Users, label: 'BD Executive', value: 'AscendEx', color: 'text-[#00D4FF]' },
+  { icon: Users, label: 'CEO', value: 'Spudblocks', color: 'text-[#00D4FF]' },
 ];
 
 export default function AboutSection() {
